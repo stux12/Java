@@ -39,17 +39,17 @@ public class AppleGame {
 		int sw=0; //while문 빠져나오기 위한 스위치
 		
 		
-			
+			// 계속 돌리기 위해서 무한루프
 			while(sw==0) {
-				for(int i=0; i<5; i++) {
+				for(int i=0; i<5; i++) { // 처음 문자들 계속 출력하게끔 한것
 					System.out.print(mitjul[i]);
 				}//for-end
-				if(count2 == 5) {
+				if(count2 == 5) { // 정답일시 종료하는 곳
 					System.out.println(" 축하합니다~~");
 					System.out.println(count+"번째 만에 맞추셨어요!!");
 					sw=1;
 				}//if-end
-				else {
+				else { // 값을 넣는곳
 					System.out.println(" "+count+"번째 시도");
 					System.out.println("예상글자 입력>");
 					test = sc.next();
@@ -65,7 +65,7 @@ public class AppleGame {
 					}//if-end
 				}//else-end
 				
-				if(count == 13) {
+				if(count == 13) { // 기회실패시 종료하는 곳
 					System.out.println("다음기회에");
 					sw=1;
 				}

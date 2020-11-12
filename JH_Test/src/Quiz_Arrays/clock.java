@@ -1,4 +1,4 @@
-package test;
+package Quiz_Arrays;
 
 public class clock {
 

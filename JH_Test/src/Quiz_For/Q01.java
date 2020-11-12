@@ -1,4 +1,4 @@
-package HForQuiz;
+package Quiz_For;
 
 public class Q01 {
 

@@ -1,4 +1,4 @@
-package HSwitchQuiz;
+package Quiz_Switch;
 
 import java.util.Scanner;
 
