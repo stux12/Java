@@ -16,9 +16,13 @@ public class SQLDate {
 		// 자바 날짜 -> SQL 날짜 
 		Date d11 = new Date(); // 자바-날짜
 		//SQL Date는 직접 들어가서 찾아온거라 import를 안함       
+		//									d11을 초단위로 쪼개서 sql.Date()를써서 날짜까지만 계산해서 s11에 저장한 형태!!
 		java.sql.Date s11 = new java.sql.Date(d11.getTime()); //DB-날짜 = DB 날짜 (import선언은 java.util만 한다)
 		System.out.println(d11); // java에서 Date = 시간나오고 날짜나오고
 		System.out.println(s11); // sql에서 Date = only 날짜
+		
+		long soo = d11.getTime();
+		System.out.println(soo);
 		
 		// SQL 날짜 -> 자바 날짜
 		Date d12 = new Date(s11.getTime());

@@ -20,15 +20,15 @@ public class Extend04 {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("어느차를 타시렵니까  (부모차=1 자녀차=2) >");
-		int a = sc.nextInt();
+		String a = sc.next();
 		
 		Boo2 boo = new Boo2();
 		Boo2 boo2= (Boo2)new Ja2();
 		
-		if(a==1) {
+		if(a.equals("1")) {
 			boo.car();
 		}
-		else if(a==2) {
+		else if(a.equals("2")) {
 			boo2.car();
 		}
 		else {

@@ -36,7 +36,7 @@ public class Extend02{
 		 수영은 내가잘해 swim() = 물고기
 		 */
 		
-		Boomo2 ani = new Boomo2();
+		Boomo2 ani = new Boomo2(); // 부모객체를 직접 생성한것이기 때문에 사용가능
 		seo bi = new seo();
 		moolgo fi  = new moolgo();
 		

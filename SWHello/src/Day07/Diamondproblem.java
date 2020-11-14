@@ -8,7 +8,7 @@ interface car{
 interface car2{
 	
 }
-				//extends와 동일한의미 interface를 불러올때 사용 extends는 class 하나만 불러올수 있지만 implements는 interface를 여러개 가져올 수 있음
+							//extends와 동일한의미 interface를 불러올때 사용 extends는 class 하나만 불러올수 있지만 implements는 interface를 여러개 가져올 수 있음
 public class Diamondproblem implements car, car2 {
 
 	public static void main(String[] args) {

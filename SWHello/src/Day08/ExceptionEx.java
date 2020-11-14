@@ -2,7 +2,7 @@ package Day08;
 
 import java.util.Scanner;
 
-public class Exception {
+public class ExceptionEx {
 
 	public static void main(String[] args) {
 
@@ -14,6 +14,7 @@ public class Exception {
 		finally {에러 유무에 관계없이 무조건 해야함}
 		 */
 		
+		//이부분에서 에러날지도 몰라라는 내용을 적기
 		try{
 		Scanner sc1 = new Scanner(System.in);
 		
@@ -31,11 +32,12 @@ public class Exception {
 		System.out.println("나눈값은 : "+soo1/soo2);
 		}// try_end
 		
-				//예외시킨다!!
+		//에러가난 내용을 적어주는곳 Exception e라는 에러를 제외시킨다.
 		catch(Exception e) {
 			System.out.println("에러가 났어요~");
 		}// catch_end
 		
+		// 에러 유무에 관계없이 무조건 해야함
 		finally {
 			System.out.println("gooooooooooood");
 		}// finally_end

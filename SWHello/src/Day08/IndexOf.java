@@ -25,8 +25,10 @@ public class IndexOf {
 		
 		int sw=0; // 순차검색
 		for(int i=0; i<bae.length; i++) {
-			//JAVA글자가 있으면 >=0 //indexOf에서는 없으면 무조건 -1 !=-1도 가능
+			//JAVA글자가 있으면 몇번째에 있는지 번째수가 나옴 그래서 있을경우 >=0 //indexOf에서는 없으면 무조건 -1 !=-1도 가능 
+					// 대문자로 다 바꿔서		JAVA라는게 있는지 확인
 			if(bae[i].toUpperCase().indexOf("JAVA")>=0) {
+//				System.out.println(bae[i].toUpperCase().indexOf("JAVA"));
 				System.out.println(bae[i]);
 				sw=1;
 			}//if_end

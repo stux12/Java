@@ -27,7 +27,8 @@ public class Change {
 	}// main_end
 
 	private static void change(String moonja) {
-							// 문자를 하나씩 잘라서 char배열에 들어감
+		
+		// 문자를 하나씩 잘라서 char배열에 들어감
 		char[] ch = moonja.toCharArray();
 		
 		// 1번째방과 3번째방 값 바꾸는것!!
@@ -41,7 +42,7 @@ public class Change {
 		}// for_end
 		System.out.println();
 					// new String을 무조건 써야하며 다시붙일 char[]인 ch를 써야함!!
-		String str2 = new String(ch); // char[] -> String으로 만드는것
+		String str2 = new String(ch); //char[] -> String으로 만드는것
 		System.out.println(str2); // for문을 돌릴필요없이 이방법으로 출력가능
 		
 	}// method_end

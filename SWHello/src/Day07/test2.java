@@ -26,9 +26,9 @@ public class test2 {
 		
 		
 		
-//		b1.diamond; // error가 잘나오는데??
-		System.out.println(b1.diamond);
-		b1.move(); // 얜 error가 왜 안나오고 값이 나오지??
+//		b1.diamond; // error이유는 아무것도 하지 않았기 때문에
+		System.out.println(b1.diamond); //
+		b1.move(); // 나오는 이유 : 부모4라는 객체를 직접 만들었기 때문에 부모는 자기의 메소드를 사용가능하다.
 		
 		
 	}
