@@ -2,7 +2,7 @@ package Day07;
 
 interface samchon{ // 상속역할
 	void isBoat(); // 선언O, 구현X, child class에서 구현해야함, {}도 없음 대충설계도라서
-					// public왜 안쓰라고 한건지??
+					// public왜 안쓰라고 한건지?? -> 다른데서 동일한이름의 interface가 있으면 에러날수 있으니 나중에 써야할떄도 있는거는 맞음
 	
 //	public static void bote() { // 이 방법으로 에러가 안나긴 하지만 불러올수 없음 고로 에러
 //		System.out.println("보트도 있지롱~~~~~~~~~");

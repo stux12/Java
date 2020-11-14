@@ -24,19 +24,17 @@ public class rain {
 				if(j>=0&&j<5) {
 					num++;
 					soo[i][j] = num;
-				}
-				
-			}
-			
-		}
+				}//if_end
+			}//두번째for_end
+		}//첫번째for_end
 		
 		
 		for(int i=0; i<soo.length; i++) {
 			for(int j=0; j<soo[i].length; j++) {
 				System.out.print(soo[i][j] + "\t");
-			}System.out.println();
-		}
-		
+			}//두번쨰for_end
+			System.out.println();
+		}//첫번째for_end
 		
 		/*
 		 1	3	6	10	15
@@ -44,7 +42,6 @@ public class rain {
 		 4	8	13	18	22
 		 7	12	17	21	24
 		 11	16	20	23	25
-		 
 		 이 문제의 경우 값을 넣을때 i랑j를 변경하면 된다
 		 */
 		

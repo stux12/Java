@@ -1,6 +1,6 @@
 package Day07;
 
-public class test {
+public class joonwoo {
 
 	  public static void main(String[] args) {
 	      int[] viras = {'A', 'A', 'A', 'A'};
