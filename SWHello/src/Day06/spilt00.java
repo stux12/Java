@@ -11,9 +11,10 @@ public class spilt00 {
 		 
 		 */
 		
-		String s1 = "듀엣그룹,duetMiso,얼굴천사";
+		String s1 = "듀엣그룹**duetMiso**얼굴천사";
 		
-		String [] bae = s1.split(",");
+		String [] bae = s1.split("\\*\\*");
+		
 		
 		for(int i=0; i<bae.length; i++) {
 			System.out.println(bae[i]);

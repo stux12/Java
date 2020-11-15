@@ -22,6 +22,7 @@ public class Extend {
 		// 객체 생성
 		Boomo b1 = new Boomo();
 		b1.don();
+		System.out.println();
 //		b1.diamond; // 상속된사람만 접근가능함
 		
 		janyo j1 = new janyo();

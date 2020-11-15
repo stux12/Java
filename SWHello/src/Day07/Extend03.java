@@ -30,7 +30,7 @@ public class Extend03 {
 //		ja j2 = b1; // 자녀가 부모의 값을 받아오지는 못함, 재산문제  부모 <= 자녀
 //		ja j3 = new Boo(); // 위에거랑 같은것
 		
-		Ja j2 = (Ja)b3; // b3는 new Ja()에서 나왔으니 Boo객체를 -> Ja로 만들어서 저장
+//		Ja j2 = (Ja)b3; // b3는 new Ja()에서 나왔으니 Boo객체를 -> Ja로 만들어서 저장
 		
 //		Ja j3 = (Ja)b1; // 처음 Boo객체라도 Ja객체로 형변환해서 저장도 가능 하지만 에러남 재산이 다르기 때문에 손해볼짓을 안함!!!
 //		ja j3 = new Boo(); 

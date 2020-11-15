@@ -15,6 +15,7 @@ public class Exam09 {
 //		kaja(bb); // 오버로딩 됨 인자의 타입이 다름
 		
 		
+		
 //		private static int kaja(int i, int j) {
 //			return 100;
 //		}
@@ -22,12 +23,12 @@ public class Exam09 {
 //			return "뭐야뭐야";
 //		} ==> 오버로딩이 된것이 아님 애초에 찾아올때부터 못찾아옴
 	
-
+	
 	}
 
 	private static void kaja(int aa, int bb) {
 
-		
+			System.out.println("값이다!!");
 		
 	}
 

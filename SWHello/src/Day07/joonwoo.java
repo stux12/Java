@@ -4,8 +4,8 @@ public class joonwoo {
 
 	  public static void main(String[] args) {
 	      // int []에 문자를 저장할경우 해당 문자의 아스키코드값이 저장이 된다.
-		  int[] viras = {'A', 'A', 'A', 'A'};
-	      
+		  int[] viras = {65, 'A', 'A', 'A'};
+	     
 		  // 그 값을 ++할경우 아스키코드의 값이 1증가된다.
 	      viras[2]++;
 	      

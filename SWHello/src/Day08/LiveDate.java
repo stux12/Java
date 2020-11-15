@@ -16,6 +16,8 @@ public class LiveDate {
 		System.out.println(d100.toGMTString()); // 그리니치천문대 시간으로 나오기 때문에 00:00:00으로 나옴
 							// 얘를 기준으로 잡아야 여러나라에서도 시차가 적용됨
 			
+				
+		
 		// 지금 현재 시간
 		Date d0 = new Date();
 		System.out.println(d0);
@@ -31,6 +33,7 @@ public class LiveDate {
 		//.getTime이 년월일시분초를 1000m/s단위로 쪼개버린것!!
 		mybirthday.getTime(); // 내 생일을 쪼개고
 		d0.getTime(); // 현재시간을 쪼개고
+		System.out.println(mybirthday.getTime());
 		//값이너무크니 long								
 		long cha = d0.getTime()-mybirthday.getTime();
 		long nal = cha/1000/60/60/24;

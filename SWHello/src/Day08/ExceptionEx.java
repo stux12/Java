@@ -32,13 +32,17 @@ public class ExceptionEx {
 		System.out.println("나눈값은 : "+soo1/soo2);
 		}// try_end
 		
-		//에러가난 내용을 적어주는곳 Exception e라는 에러를 제외시킨다.
+		//에러가난 내용을 적어주는곳 Exception이라는 에러가 나면 e변수에 저장함.
 		catch(Exception e) {
+			System.out.println(e);
 			System.out.println("에러가 났어요~");
 		}// catch_end
 		
+		
+		
 		// 에러 유무에 관계없이 무조건 해야함
 		finally {
+			System.out.println(0/0);
 			System.out.println("gooooooooooood");
 		}// finally_end
 		

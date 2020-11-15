@@ -12,6 +12,7 @@ public class gekce {
 		 2) 제작
 		 3) 사용
 		 
+		 
 		 OOP 만드는 순서!!
 		
 		 1) 정의(설계) - 객체, instance

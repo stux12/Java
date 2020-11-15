@@ -34,6 +34,13 @@ public class Extend04 {
 		else {
 			System.out.println("오류입니다");
 		}
+//		
+//		switch (b) {
+//		case 1 : boo.car(); break;
+//		case 2 : boo2.car(); break;
+//		default : System.out.println("오류입니다.");
+//		}
+		
 		
 	}// main_end
 }// Extend class_end

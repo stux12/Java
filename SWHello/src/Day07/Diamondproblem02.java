@@ -1,7 +1,7 @@
 package Day07;
 
 interface samchon{ // 상속역할
-	void isBoat(); // 선언O, 구현X, child class에서 구현해야함, {}도 없음 대충설계도라서
+	public void isBoat(); // 선언O, 구현절대안됨 X, child class에서 구현해야함, {}도 없음 대충설계도라서
 					// public왜 안쓰라고 한건지?? -> 다른데서 동일한이름의 interface가 있으면 에러날수 있으니 나중에 써야할떄도 있는거는 맞음
 	
 //	public static void bote() { // 이 방법으로 에러가 안나긴 하지만 불러올수 없음 고로 에러
@@ -9,7 +9,7 @@ interface samchon{ // 상속역할
 //	}	
 }
 
-interface gomo{
+interface gomo extends samchon{
 	void bosuk();
 }
 
@@ -20,7 +20,7 @@ class Booja{
 }// Booja class_end
 
 	//Na 에 엑박이 뜨면 클릭하여 메소드 만들기
-class Na extends Booja implements samchon, gomo{ // Booja를 상속하고 samchon은 간단한 도구
+class Na extends Booja implements gomo{ // Booja를 상속하고 samchon은 간단한 도구
 
 	
 	public void isBoat() { // 위에서 삼촌의 isBoat()는 구현을 안했기 때문에 여기서 구현함

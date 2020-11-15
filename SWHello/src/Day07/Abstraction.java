@@ -1,7 +1,8 @@
 package Day07;
 
-// 일반클래스 -> 추상클래스
+// 일반클래스 -> 추상클래스 // 다중상속 X
 abstract class Kwail { // 추상 메소드를 썻으면 클래스도 추상 클래스로 해줘야함!!
+					//구현 O 선언O
 	public void good() {
 		System.out.println("먹으면 좋아");
 	}// method_end
@@ -9,6 +10,8 @@ abstract class Kwail { // 추상 메소드를 썻으면 클래스도 추상 클�
 			
 	public abstract void mukja(); // 추상 메소드 구현 X 선언 O
 }// class_end
+
+
 
 // 사과 클래스 만들기          //Kwail을 상속
 class Sakwa extends Kwail{
@@ -45,7 +48,6 @@ public class Abstraction  {
 		k1.mukja(); // 다형성
 		k2.mukja();
 		k3.mukja();
-		
 		
 	}// main_end
 }// class_end

@@ -8,7 +8,6 @@ public class Exam01 {
 		int i1 = sh1;
 		
 		System.out.println(i1);
-		
 		int soo7 = 23456;
 		short sh2 = (short)soo7; // int -> short 
 				//cast 연산자 - 강제형변환 - 명시적형변환

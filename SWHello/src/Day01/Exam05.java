@@ -9,14 +9,15 @@ public class Exam05 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-//		int a;
-//		do {
-//			System.out.println("1. 짜장");
-//			System.out.println("2. 짬뽕");
-//			System.out.print("선택하세요 >");
-//			a = Integer.valueOf(sc.next());
-//		} while(a!=1 && a!=2);//(a > 2 || a <= 0); 도 가능
-//		System.out.println("맛있게드세요");
+		int a;
+		do {
+			System.out.println("1. 짜장");
+			System.out.println("2. 짬뽕");
+			System.out.print("선택하세요 >");
+			a = Integer.valueOf(sc.next());
+	
+		} while(a!=1 && a!=2);//(a > 2 || a <= 0); 도 가능
+		System.out.println("맛있게드세요");
 //		
 //		
 //		String b;

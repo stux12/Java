@@ -13,23 +13,6 @@ public class Exam03 {
 			kaja(soo);
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 
 	}
 

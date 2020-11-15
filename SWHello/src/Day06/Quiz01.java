@@ -7,6 +7,7 @@ class cafe1{
 	private int price;
 	private String witch;
 
+	//생성자들
 	public cafe1(String name, String size, int price, String witch) {
 		this.name = name;
 		this.size = size;
@@ -15,7 +16,7 @@ class cafe1{
 	}
 	
 	
-
+	//디폴트생성자 무조건만든다!!! 생성자를 하나라도 만들시!!!
 	public cafe1() {
 	}
 
@@ -46,15 +47,7 @@ class cafe1{
 		this.witch = witch;
 	}
 	
-	public String toString() {
-		return name + "의 사이즈가" + size + "인 경우 가격은" + price + "원 이며" + witch + "지점에서 판매합니다.";
-	}
-	
-	
 }
-
-
-
 
 
 
@@ -89,6 +82,8 @@ public class Quiz01 {
 		cafe.setSize(bae[1]);
 		cafe.setPrice(Integer.valueOf(bae[2]));
 		cafe.setWitch(bae[3]);
+		
+		
 		
 		
 		System.out.println(cafe); // .toString 생략

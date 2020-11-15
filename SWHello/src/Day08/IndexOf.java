@@ -23,6 +23,8 @@ public class IndexOf {
 						"Oracle and Java-JDBC"
 						};
 		
+		
+		
 		int sw=0; // 순차검색
 		for(int i=0; i<bae.length; i++) {
 			//JAVA글자가 있으면 몇번째에 있는지 번째수가 나옴 그래서 있을경우 >=0 //indexOf에서는 없으면 무조건 -1 !=-1도 가능 

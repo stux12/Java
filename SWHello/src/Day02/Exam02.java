@@ -16,7 +16,8 @@ public class Exam02 {
 		int max = 0;
 		int count = 0;
 		
-		while(true) {
+		int sw =0;
+		while(sw==0) {
 			System.out.print("점수를 입력하세요");
 			a = Integer.valueOf(sc.next());
 			if(a >= 0) {
@@ -27,6 +28,7 @@ public class Exam02 {
 				count++;	
 			}
 			if(a == -1) {
+				sw=1;
 				break;
 			}
 		}

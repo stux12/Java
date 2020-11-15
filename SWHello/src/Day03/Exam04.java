@@ -7,16 +7,16 @@ public class Exam04 {
 		choki(); // 비스듬히 누우면 메소드호출되었다는 뜻
 		choongyo();
 		chool();
-		
+		System.out.println(chool());
 		
 	}// main - end
 	
 	
 	
 	
-	private static void chool() {
+	private static int chool() {
 		System.out.println("결과출력");
-
+		return 0;
 	}// chool() 정의문 - end
 
 

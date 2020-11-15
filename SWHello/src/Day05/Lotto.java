@@ -28,6 +28,7 @@ public class Lotto {
 			System.out.print(num[i]+"\t");
 		}System.out.println();
 		
+		
 //		 Math.random() -> 0.00001 ~ 0.99999
 //							*45
 //						  0.00005 ~ 44.77777
