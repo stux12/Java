@@ -50,6 +50,7 @@ public class HashMapEx01 {
 		}
 		
 		// key하고 value 같이 찍어내는 방법 2) Entry Set
+//		set = map을 이용해서 구현					key값 + value값
 		Set <Map.Entry <Integer, String>> set3 = hm1.entrySet();
 		for(Map.Entry<Integer, String> k : set3) {
 			System.out.println(k.getKey()+"\t"+k.getValue());
