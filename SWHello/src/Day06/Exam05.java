@@ -1,12 +1,16 @@
-package Day04;
+package Day06;
 
 import java.util.Scanner;
 
-public class Exam01 {
+public class Exam05 {
 
 	public static void main(String[] args) {
 		
-		// Q) i해가 윤년이냐?
+		kajaYoon();		
+		
+	}
+
+	private static void kajaYoon() {
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -18,16 +22,6 @@ public class Exam01 {
 		else {
 			System.out.println("평년입니다");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	}
 }

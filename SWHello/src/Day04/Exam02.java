@@ -1,36 +1,41 @@
 package Day04;
 
+import java.util.Scanner;
+
 public class Exam02 {
 
 	public static void main(String[] args) {
+		
+		//Q 키 몸무게를 입력받고 비만도를 나타내세요
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("키를 입력하세요 >");
+		int ke = Integer.valueOf(sc.next());
+		System.out.print("몸무게를 입력하세요 >");
+		int mommu = Integer.valueOf(sc.next());
+		
+		double ke2 = ke / 100.0;
+		double bmi = mommu / (ke2*2); // 같은식임 double bmi = mommu / Math.pow(mki, 2);
+		String result;
+		
+		if(bmi >= 30) {
+			result = "비만";
+		}else if(bmi >= 25) {
+			result = "과체중";
+		}else if(bmi >= 20) {
+			result = "정상";
+		}else {
+			result = "저체중";
+		}
+		
+		System.out.println(result);
+		
+		
 
 		
-//		int [] jumsoo1 = {30, 70, 100, 90, 20};
-//		int tot71= 0;
-//		for (int i = 0; i < jumsoo1.length; i++) {
-//			tot71 = tot71 + jumsoo1[i];
-//		}
-//		System.out.println("총점 = " + tot71 + "평균 = " + tot71/5.0);
 		
-		
-		/*
-		 	Q) 100개 수를 메소드 2형식으로 전달하여 구하시오
-		 	
-		 		kaja(1,4,20,...)
-		 		kaja(int i, intj, int...)
-		 */
-		
-		int [] jumsoo3 = {30,70,100,90,20} ;
-		
-		kaja100(jumsoo3); //배열의 대표명 //그 배열의 시작번지
-		System.out.println(jumsoo3[0]); // 아래 메서드에서 배열의 값을 바꿨기 때문에 값이 바껴서 저장됨
 		
 		
 	}
-
-	private static void kaja100(int[] jumsoo555) { //위 jumsoo3의 주소와 같은 주소를 받고 있음
-		jumsoo555[0] = 100;
-		System.out.println(jumsoo555[0]);
-	}
-
 }

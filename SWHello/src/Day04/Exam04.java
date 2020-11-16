@@ -3,38 +3,27 @@ package Day04;
 public class Exam04 {
 
 	public static void main(String[] args) {
+		
+		String ppp = null;
+		String qqq = "";
+//		System.out.println(ppp.length()>0); - null pointer error
+// 		System.out.println(qqq.length()>0);
+		
+		String aa = "ondal";
+		String bb = "ondal";
+		String cc = new String ("ondal");
+		String dd = new String ("ondal");
+		
+		System.out.println(aa==bb);
+		System.out.println(aa==cc);
+		System.out.println(aa.equals(bb));
+		System.out.println(aa.equals(cc));
+		System.out.println(cc==dd);
+		
 
-		int [][] soo = {	
-				{10,20,30},
-				{40,50,60,70,80},
-				{90,100,110,120}
-		};
-		
-//		System.out.println(soo.length); // ==> 세로줄 길이라고 보면 됨
-//		System.out.println(soo[1].length); // ==> 세로줄 첫번째에 해당하는 가로줄 길이라고 보면 됨
-		
-		for(int i=0; i<soo.length; i++) {
-			for(int j=0; j<soo[i].length; j++) {
-				System.out.print(soo[i][j]+"\t");
-			}System.out.println();
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
 		
 	}
-
 }

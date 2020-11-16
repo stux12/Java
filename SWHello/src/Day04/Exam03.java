@@ -3,26 +3,34 @@ package Day04;
 public class Exam03 {
 
 	public static void main(String[] args) {
-	
-		/*
-		 	Q 5개 수를 배열을 사용하여 전달한후 배열 역순으로 출력하시오
-		 */
 		
-			int[] soo = {1,2,3,4,5};
-			
-			kaja(soo);
+		System.out.println(Short.MIN_VALUE);
+		System.out.println(Short.MAX_VALUE);
+		
+		System.out.println(Integer.MIN_VALUE);
+		System.out.println(Integer.MAX_VALUE);
+		
+		System.out.println(Byte.MIN_VALUE);
+		System.out.println(Byte.MAX_VALUE);
+		
+		System.out.println(Long.MIN_VALUE);
+		System.out.println(Long.MAX_VALUE);
+		
+		System.out.println(Float.MIN_VALUE);
+		System.out.println(Float.MAX_VALUE);
+		
+		System.out.println(Double.MIN_VALUE);
+		System.out.println(Double.MAX_VALUE);
+		
+		System.out.println(Character.MIN_VALUE); // 공백
+		System.out.println(Character.MAX_VALUE); // ??     
+		
+//		System.out.println(Boolean.MIN_VALUE);
+//		System.out.println(Boolean.MAX_VALUE);
 		
 		
-
+				
+		
+		
 	}
-
-	private static void kaja(int[] soo) {
-
-		for(int i=soo.length-1; i>=0; i--) {
-			System.out.print(soo[i] + "\t");
-		}
-		// c# kaja(ref int aa, ref int bb)  ==> 키만주는게아닌 물건단위로 묶어서 키를줄수있음
-		
-	}
-
 }
