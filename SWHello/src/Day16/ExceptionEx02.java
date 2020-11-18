@@ -45,7 +45,6 @@ public class ExceptionEx02 {
 										//에러난 메세지를 출력!!
 					System.out.println(e.getMessage()); //by zero
 					//oracle 에러시 ora-10976
-					//c언어 	  에러시 errno 4069
 					//Java	  에러시 message에 들어감
 				}// catch_end
 				

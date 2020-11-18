@@ -1,6 +1,6 @@
 package Day16;
 
-public class un_boxing {
+public class Un_boxing {
 
 	public static void main(String[] args) {
 		
