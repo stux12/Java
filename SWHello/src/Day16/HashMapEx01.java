@@ -10,7 +10,7 @@ public class HashMapEx01 {
 	public static void main(String[] args) {
 
 //				처리속도가 조금 느림			처리속도가 조금더 빠름
-		//ArrayList는 <형태 한개만가능> , HashMap <형태 여러개 가능> 
+		//ArrayList는 <한개의 제너럴 객체만 가능> , HashMap <제너럴 객체 형태 여러개 가능> 
 				//key값	 value값 형태는 상관없음
 		HashMap <Integer,String> hm1 = new HashMap <Integer, String>();
 		

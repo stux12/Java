@@ -97,7 +97,8 @@ public class ArrayListEx01 {
 		 arr5.add(new SMarket2("어려", 4000));
 		 arr5.add(new SMarket2("워요", 5000));
 
-		
+		System.out.println(sm1); //toString
+		System.out.println(sm2); //toString
 		
 		
 		 for(int i=0; i<arr5.size(); i++) {
