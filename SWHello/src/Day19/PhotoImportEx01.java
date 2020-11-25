@@ -71,7 +71,7 @@ public class PhotoImportEx01 extends JFrame {
 		
 		
 		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(33, 10, 300, 269);
+		btnNewButton_1.setBounds(22, 10, 300, 269);
 		btnNewButton_1.setToolTipText("RED");
 											//하나만 사용하겠다라는 의미
 		btnNewButton_1.addMouseListener(new MouseAdapter() {

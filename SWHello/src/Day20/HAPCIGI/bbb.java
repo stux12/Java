@@ -16,6 +16,8 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class bbb extends JFrame {
 
@@ -66,6 +68,7 @@ public class bbb extends JFrame {
 		getContentPane().add(lblPw);
 		
 		JButton btnNewButton = new JButton("인자 갖고가자");
+		btnNewButton.setBounds(74, 46, 281, 31);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			
 			public void mouseClicked(MouseEvent e) {
@@ -83,7 +86,6 @@ public class bbb extends JFrame {
 				
 			}
 		});
-		btnNewButton.setBounds(74, 46, 281, 31);
 		getContentPane().add(btnNewButton);
 		// TODO Auto-generated constructor stub
 	}
