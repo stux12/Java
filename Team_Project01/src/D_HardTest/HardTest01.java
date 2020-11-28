@@ -12,37 +12,22 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.Timer;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class HardTest01 extends HardRandom {
+public class HardTest01 extends JavaTestList {
 
 	private JPanel contentPane;
 	private JTextField textField;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					HardTest01 frame = new HardTest01();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 * @param hardCount 
-	 */
+	
 	public HardTest01() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 750);
@@ -105,11 +90,11 @@ public class HardTest01 extends HardRandom {
 					HardCount++;
 				}
 				else {
-					HardCountTle++;
-					HardCountTle1 = 1;
+					HardtleCount++;
+					Hard[num-1]=num;
 				}
-//				turn = (int)Math.ceil(10*Math.random());
-				turn = 2;
+				
+				turn = (int)Math.ceil(10*Math.random());
 				switch (turn) {
 				case 5:
 					if(test[4]!=1) {
@@ -161,8 +146,37 @@ public class HardTest01 extends HardRandom {
 				
 			}
 		});
+		timer=30;
+		JLabel label_2 = new JLabel("남은시간 : "+timer+"초 입니다.");
+		label_2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_2.setForeground(Color.RED);
+		label_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		label_2.setBounds(405, 280, 238, 70);
+		contentPane.add(label_2);
+		
 		btnNewButton.setBounds(283, 571, 136, 45);
 		contentPane.add(btnNewButton);
+		
+		time= new Timer(1000, new ActionListener() {
+			@Override
+			
+			public void actionPerformed(ActionEvent e) {
+				if(timer>=0) {
+				label_2.setText("남은시간 : "+timer+"초 입니다.");
+				timer--;
+				}
+				else if(timer<0){
+					HardtleCount++;
+					Hard[num-1]=num;
+					dispose();
+					setVisible(false);
+					new HardTest02TimeOut().setVisible(true);
+					time.stop();
+					
+				}
+			}
+		});
+		time.start();
 		
 	}
 }

@@ -1,51 +1,29 @@
 package C_MiddleTest;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import A_Main.JavaTestList;
 import A_Main.JavaTestMain;
-import B_EasyTest.EasyTestLast;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-
-public class MiddleTestLast extends MiddleTest10 {
+public class MiddleTestLast extends JavaTestList {
 
 	private JPanel contentPane;
 	private String last = "당신의 점수는 ";
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MiddleTestLast frame = new MiddleTestLast(MiddleCount);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 * @param middleCount 
-	 */
-	public MiddleTestLast(int middleCount) {
-		super(middleCount);
+	static String num; 
+	int count;
+	
+	public MiddleTestLast() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 750);
 		contentPane = new JPanel();
@@ -129,22 +107,6 @@ public class MiddleTestLast extends MiddleTest10 {
 			break;
 		}
 		
-		JButton button = new JButton("처음문제로 돌아가기");
-		button.setIcon(new ImageIcon(MiddleTestLast.class.getResource("/image/left2.png")));
-		button.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				MiddleCount=0;
-				dispose();
-				setVisible(false);
-				new MiddleTest01(MiddleCount).setVisible(true);
-			}
-		});
-		button.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		button.setBackground(Color.GREEN);
-		button.setBounds(35, 615, 174, 52);
-		contentPane.add(button);
-		
 		JButton button_1 = new JButton("메인으로 돌아가기");
 		button_1.setIcon(new ImageIcon(MiddleTestLast.class.getResource("/image/Ghome.png")));
 		button_1.addMouseListener(new MouseAdapter() {
@@ -158,7 +120,7 @@ public class MiddleTestLast extends MiddleTest10 {
 		});
 		button_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		button_1.setBackground(Color.GREEN);
-		button_1.setBounds(278, 615, 174, 52);
+		button_1.setBounds(278, 615, 218, 52);
 		contentPane.add(button_1);
 		
 		JButton button_2 = new JButton("종료하시겠어요?");
@@ -173,6 +135,33 @@ public class MiddleTestLast extends MiddleTest10 {
 		button_2.setBackground(Color.GREEN);
 		button_2.setBounds(520, 615, 202, 52);
 		contentPane.add(button_2);
+		
+		
+		num = "<html> 틀린 문제들은 <br/>";
+		
+		for(int i=0; i<Middle.length; i++) {
+			
+			if(Middle[i]!=0) {
+				num += Middle[i]+"번문제   ";
+				count++;
+			}
+			if(count>3) {
+				num += "<br/>";
+				count=0;
+			}
+		}
+		JButton button = new JButton("틀린문제 확인하기");
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MiddleTestCheck check = new MiddleTestCheck();
+				check.setVisible(true);
+			}
+		});
+		button.setIcon(new ImageIcon(MiddleTestLast.class.getResource("/image/TleG.png")));
+		button.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		button.setBackground(Color.GREEN);
+		button.setBounds(23, 615, 213, 52);
+		contentPane.add(button);
 	}
-
 }

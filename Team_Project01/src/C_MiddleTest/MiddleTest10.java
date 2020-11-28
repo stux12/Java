@@ -25,7 +25,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.ImageIcon;
 
-public class MiddleTest10 extends MiddleTest09 {
+public class MiddleTest10 extends JavaTestList {
 
 	private JPanel contentPane;
 	private JRadioButton rdbtnNewRadioButton;
@@ -33,27 +33,11 @@ public class MiddleTest10 extends MiddleTest09 {
 	private JRadioButton radioButton_1;
 	private JRadioButton radioButton_2;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MiddleTest10 frame = new MiddleTest10(MiddleCount);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public MiddleTest10(int middleCount) {
-		super(middleCount);
+	
+	
+	public MiddleTest10() {
+		
+		// 창 설정
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 750);
 		contentPane = new JPanel();
@@ -62,12 +46,12 @@ public class MiddleTest10 extends MiddleTest09 {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		// 버튼 설정
 		rdbtnNewRadioButton = new JRadioButton("limit() - 스트림의 첫 요소부터 전달된 요소만으로 이루어진 새로운 스트림을 반환합니다.");
 		rdbtnNewRadioButton.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		rdbtnNewRadioButton.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setEnabled(true);
-
 		rdbtnNewRadioButton.setBounds(80, 200, 620, 50);
 		contentPane.add(rdbtnNewRadioButton);
 	
@@ -77,7 +61,6 @@ public class MiddleTest10 extends MiddleTest09 {
 		rdbtnBinarysearch.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnBinarysearch);
 		rdbtnBinarysearch.setEnabled(true);
-
 		rdbtnBinarysearch.setBounds(80, 300, 570, 50);
 		contentPane.add(rdbtnBinarysearch);
 		
@@ -86,7 +69,6 @@ public class MiddleTest10 extends MiddleTest09 {
 		rdbtnCeil.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnCeil);
 		rdbtnCeil.setEnabled(true);
-
 		rdbtnCeil.setBounds(80, 400, 550, 50);
 		contentPane.add(rdbtnCeil);
 		
@@ -95,25 +77,25 @@ public class MiddleTest10 extends MiddleTest09 {
 		rdbtnConcat.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnConcat);
 		rdbtnConcat.setEnabled(true);
-
 		rdbtnConcat.setBounds(80, 500, 632, 50);
 		contentPane.add(rdbtnConcat);
 		
-		JLabel lblNewLabel = new JLabel("Q 10. 메소드와 메소드 설명이 틀리게 짝지어 진것은??");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		lblNewLabel.setBounds(50, 80, 600, 100);
-		contentPane.add(lblNewLabel);
 		
-		JButton button = new JButton("처음으로");
-		button.setIcon(new ImageIcon(MiddleTest10.class.getResource("/image/Ghome.png")));
+		
+		JButton button = new JButton("이전으로");
+		button.setIcon(new ImageIcon(MiddleTest10.class.getResource("/image/left2.png")));
 		button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MiddleCount=0;
+				if(Middle[8]==0) {
+					MiddleCount--;
+				}
+				else {
+					MiddletleCount--;
+				}
 				dispose();
 				setVisible(false);
-				new MiddleTest01(MiddleCount).setVisible(true);
+				new MiddleTest09().setVisible(true);
 			}
 		});
 		button.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
@@ -121,26 +103,7 @@ public class MiddleTest10 extends MiddleTest09 {
 		button.setBounds(50, 620, 174, 52);
 		contentPane.add(button);
 		
-		JLabel label = new JLabel("");
-		label.setOpaque(true);
-		label.setForeground(Color.RED);
-		label.setBackground(Color.BLACK);
-		label.setBounds(0, 56, 734, 1);
-		contentPane.add(label);
 		
-		JLabel label_1 = new JLabel("난이도 中");
-		label_1.setIcon(new ImageIcon(MiddleTest01.class.getResource("/image/middle.png")));
-		label_1.setOpaque(true);
-		label_1.setHorizontalAlignment(SwingConstants.LEFT);
-		label_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		label_1.setBackground(Color.GREEN);
-		label_1.setBounds(12, 12, 108, 35);
-		contentPane.add(label_1);
-		
-		JLabel label_2 = new JLabel("10/10");
-		label_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		label_2.setBounds(675, 12, 52, 27);
-		contentPane.add(label_2);
 		
 		JButton button_2 = new JButton("끝내기");
 		button_2.setIcon(new ImageIcon(MiddleTest10.class.getResource("/image/Right.png")));
@@ -152,13 +115,16 @@ public class MiddleTest10 extends MiddleTest09 {
 						|| rdbtnConcat.isSelected()) {
 					if (rdbtnBinarysearch.isSelected()) {
 						MiddleCount++;
+						Middle[9]=0;
 						dispose();
 						setVisible(false);
-						new MiddleTestLast(MiddleCount).setVisible(true);
+						new MiddleTestLast().setVisible(true);
 					} else {
+						MiddletleCount++;
+						Middle[9]=10;
 						dispose();
 						setVisible(false);
-						new MiddleTestLast(MiddleCount).setVisible(true);
+						new MiddleTestLast().setVisible(true);
 					}
 				}else {
 					new Check().setVisible(true);
@@ -173,6 +139,32 @@ public class MiddleTest10 extends MiddleTest09 {
 		contentPane.add(button_2);
 		
 		
-		
+		// 라벨 설정
+				JLabel lblNewLabel = new JLabel("Q 10. 메소드와 메소드 설명이 틀리게 짝지어 진것은??");
+				lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+				lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+				lblNewLabel.setBounds(50, 80, 600, 100);
+				contentPane.add(lblNewLabel);
+				
+				JLabel label = new JLabel("");
+				label.setOpaque(true);
+				label.setForeground(Color.RED);
+				label.setBackground(Color.BLACK);
+				label.setBounds(0, 56, 734, 1);
+				contentPane.add(label);
+				
+				JLabel label_1 = new JLabel("난이도 中");
+				label_1.setIcon(new ImageIcon(MiddleTest01.class.getResource("/image/middle.png")));
+				label_1.setOpaque(true);
+				label_1.setHorizontalAlignment(SwingConstants.LEFT);
+				label_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+				label_1.setBackground(Color.GREEN);
+				label_1.setBounds(12, 12, 108, 35);
+				contentPane.add(label_1);
+				
+				JLabel label_2 = new JLabel("10/10");
+				label_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+				label_2.setBounds(675, 12, 52, 27);
+				contentPane.add(label_2);
 	}
 }

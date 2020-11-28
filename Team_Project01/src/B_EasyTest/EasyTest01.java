@@ -30,131 +30,89 @@ import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 
-
 public class EasyTest01 extends JavaTestList {
 
-	private JPanel contentPane;
-	
+	// 함수 설정
+	private JPanel Pane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					EasyTest01 frame = new EasyTest01(EasyCount);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 * @param easyCount 
-	 * @param bigyo 
-	 * @param easyCount2 
-	 */
-	public EasyTest01(int easyCount) {
-		
+	public EasyTest01() {
+		// 창 설정
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 750);
-		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 0));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("난이도 下");
-		lblNewLabel.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/chick.png")));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel.setOpaque(true);
-		lblNewLabel.setBackground(Color.YELLOW);
-		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		lblNewLabel.setBounds(12, 10, 94, 34);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setForeground(Color.RED);
-		lblNewLabel_1.setOpaque(true);
-		lblNewLabel_1.setBackground(Color.BLACK);
-		lblNewLabel_1.setBounds(0, 55, 734, 1);
-		contentPane.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("1/10");
-		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(681, 11, 41, 27);
-		contentPane.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("Q 01 자바는 어떤 언어 일까요??");
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setFont(new Font("맑은 고딕", Font.PLAIN, 30));
-		lblNewLabel_3.setBounds(35, 83, 659, 111);
-		contentPane.add(lblNewLabel_3);
-		
-		JButton btnNewButton = new JButton("객체지향 언어");
-		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		btnNewButton.setBackground(new Color(255, 255, 0));
-		btnNewButton.addMouseListener(new MouseAdapter() { // 정답
+		Pane = new JPanel();
+		Pane.setBackground(new Color(255, 255, 0));
+		Pane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(Pane);
+		Pane.setLayout(null);
+
+		// 버튼 설정
+		JButton button1 = new JButton("객체지향 언어");
+		button1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		button1.setBackground(new Color(255, 255, 0));
+		button1.addMouseListener(new MouseAdapter() { // 정답
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[0] = 0;
 				EasyCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest02(EasyCount).setVisible(true);
+				new EasyTest02().setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(35, 252, 659, 50);
-		contentPane.add(btnNewButton);
-		
-		JButton button = new JButton("주체지향 언어");
-		button.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		button.setBackground(new Color(255, 255, 0));
-		button.addMouseListener(new MouseAdapter() {
+		button1.setBounds(35, 252, 659, 50);
+		Pane.add(button1);
+
+		JButton button2 = new JButton("주체지향 언어");
+		button2.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		button2.setBackground(new Color(255, 255, 0));
+		button2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[0] = 1;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest02(EasyCount).setVisible(true);
+				new EasyTest02().setVisible(true);
 			}
 		});
-		button.setBounds(35, 348, 659, 50);
-		contentPane.add(button);
-		
-		JButton button_1 = new JButton("비절차형 언어");
-		button_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		button_1.setBackground(new Color(255, 255, 0));
-		button_1.addMouseListener(new MouseAdapter() {
+		button2.setBounds(35, 348, 659, 50);
+		Pane.add(button2);
+
+		JButton button3 = new JButton("비절차형 언어");
+		button3.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		button3.setBackground(new Color(255, 255, 0));
+		button3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[0] = 1;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest02(EasyCount).setVisible(true);
+				new EasyTest02().setVisible(true);
 			}
 		});
-		button_1.setBounds(35, 435, 659, 50);
-		contentPane.add(button_1);
-		
-		JButton btnC = new JButton("C# 언어");
-		btnC.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		btnC.setBackground(new Color(255, 255, 0));
-		btnC.addMouseListener(new MouseAdapter() {
+		button3.setBounds(35, 435, 659, 50);
+		Pane.add(button3);
+
+		JButton button4 = new JButton("C# 언어");
+		button4.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		button4.setBackground(new Color(255, 255, 0));
+		button4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[0] = 1;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest02(EasyCount).setVisible(true);
+				new EasyTest02().setVisible(true);
 			}
 		});
-		btnC.setBounds(35, 523, 659, 50);
-		contentPane.add(btnC);
-		
-		JButton button_5 = new JButton("이전으로");
-		button_5.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/left.png")));
-		button_5.addMouseListener(new MouseAdapter() {
+		button4.setBounds(35, 523, 659, 50);
+		Pane.add(button4);
+
+		JButton Back = new JButton("이전으로");
+		Back.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/left.png")));
+		Back.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				dispose();
@@ -162,29 +120,57 @@ public class EasyTest01 extends JavaTestList {
 				new JavaTestList().setVisible(true);
 			}
 		});
-		
-		button_5.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		button_5.setBackground(new Color(255, 255, 0));
-		button_5.setBounds(35, 615, 174, 52);
-		contentPane.add(button_5);
-		
-		JButton button_4 = new JButton("포기해요?");
-		button_4.addActionListener(new ActionListener() {
+
+		Back.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		Back.setBackground(new Color(255, 255, 0));
+		Back.setBounds(35, 615, 174, 52);
+		Pane.add(Back);
+
+		JButton exit = new JButton("포기해요?");
+		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_4.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/smiley.png")));
-		button_4.addMouseListener(new MouseAdapter() {
+		exit.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/smiley.png")));
+		exit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				dispose();
 				setVisible(false);
-				new EasyTestLast(EasyCount).setVisible(true);
+				new EasyTestLast().setVisible(true);
 			}
 		});
-		button_4.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		button_4.setBackground(new Color(255, 255, 0));
-		button_4.setBounds(520, 615, 174, 52);
-		contentPane.add(button_4);
+		exit.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		exit.setBackground(new Color(255, 255, 0));
+		exit.setBounds(520, 615, 174, 52);
+		Pane.add(exit);
+
+		// 라벨 설정
+		JLabel Level = new JLabel("난이도 下");
+		Level.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/chick.png")));
+		Level.setHorizontalAlignment(SwingConstants.LEFT);
+		Level.setOpaque(true);
+		Level.setBackground(Color.YELLOW);
+		Level.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		Level.setBounds(12, 10, 94, 34);
+		Pane.add(Level);
+
+		JLabel jul = new JLabel("");
+		jul.setForeground(Color.RED);
+		jul.setOpaque(true);
+		jul.setBackground(Color.BLACK);
+		jul.setBounds(0, 55, 734, 1);
+		Pane.add(jul);
+
+		JLabel number = new JLabel("1/10");
+		number.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		number.setBounds(681, 11, 41, 27);
+		Pane.add(number);
+
+		JLabel monje = new JLabel("Q 01 자바는 어떤 언어 일까요??");
+		monje.setHorizontalAlignment(SwingConstants.CENTER);
+		monje.setFont(new Font("맑은 고딕", Font.PLAIN, 30));
+		monje.setBounds(35, 83, 659, 111);
+		Pane.add(monje);
 	}
 }

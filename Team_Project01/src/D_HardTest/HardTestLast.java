@@ -7,7 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class HardTestLast extends JFrame {
+import A_Main.JavaTestList;
+
+public class HardTestLast extends JavaTestList {
 
 	private JPanel contentPane;
 

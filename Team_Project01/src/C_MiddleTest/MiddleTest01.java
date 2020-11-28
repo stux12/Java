@@ -34,30 +34,11 @@ public class MiddleTest01 extends JavaTestList {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JRadioButton rdbtnNewRadioButton;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MiddleTest01 frame = new MiddleTest01(MiddleCount);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 * 
-	 * @param middleCount
-	 */
-	public MiddleTest01(int middleCount) {
+	public MiddleTest01() {
 
 		
+		
+		// 창 설정
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 750);
 		contentPane = new JPanel();
@@ -66,12 +47,12 @@ public class MiddleTest01 extends JavaTestList {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		// 버튼 설정
 		rdbtnNewRadioButton = new JRadioButton("클래스에 final과 abstract는 함께 사용할 수 없습니다.");
 		rdbtnNewRadioButton.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		rdbtnNewRadioButton.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setEnabled(true);
-
 		rdbtnNewRadioButton.setBounds(80, 200, 550, 50);
 		contentPane.add(rdbtnNewRadioButton);
 
@@ -80,7 +61,6 @@ public class MiddleTest01 extends JavaTestList {
 		rdbtnPublicAbstract.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnPublicAbstract);
 		rdbtnPublicAbstract.setEnabled(true);
-
 		rdbtnPublicAbstract.setBounds(80, 300, 550, 50);
 		contentPane.add(rdbtnPublicAbstract);
 
@@ -89,7 +69,6 @@ public class MiddleTest01 extends JavaTestList {
 		rdbtnStatic.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnStatic);
 		rdbtnStatic.setEnabled(true);
-
 		rdbtnStatic.setBounds(80, 400, 550, 50);
 		contentPane.add(rdbtnStatic);
 
@@ -98,22 +77,11 @@ public class MiddleTest01 extends JavaTestList {
 		rdbtnPrivateAbstract.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnPrivateAbstract);
 		rdbtnPrivateAbstract.setEnabled(true);
-
 		rdbtnPrivateAbstract.setBounds(80, 500, 550, 50);
 		contentPane.add(rdbtnPrivateAbstract);
 
-		JLabel lblNewLabel = new JLabel("Q1. 제어자의 조합으로 알맞지 않은것은??");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		lblNewLabel.setBounds(50, 80, 600, 100);
-		contentPane.add(lblNewLabel);
-
 		JButton button = new JButton("이전 메뉴로");
 		button.setIcon(new ImageIcon(MiddleTest01.class.getResource("/image/left2.png")));
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -134,13 +102,53 @@ public class MiddleTest01 extends JavaTestList {
 			public void mouseClicked(MouseEvent e) {
 				dispose();
 				setVisible(false);
-				new MiddleTestLast(MiddleCount).setVisible(true);
+				new MiddleTestLast().setVisible(true);
 			}
 		});
 		button_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		button_1.setBackground(Color.GREEN);
 		button_1.setBounds(520, 620, 174, 52);
 		contentPane.add(button_1);
+
+		JButton button_2 = new JButton("다음 문제");
+		button_2.setIcon(new ImageIcon(MiddleTest01.class.getResource("/image/Right.png")));
+
+		button_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (rdbtnNewRadioButton.isSelected() || rdbtnPublicAbstract.isSelected() || rdbtnStatic.isSelected()
+						|| rdbtnPrivateAbstract.isSelected()) {
+					if (rdbtnPublicAbstract.isSelected()) {
+						MiddleCount++;
+						Middle[0] = 0;
+						dispose();
+						setVisible(false);
+						new MiddleTest02().setVisible(true);
+
+					} else {
+						MiddletleCount++;
+						Middle[0] = 1;
+						dispose();
+						setVisible(false);
+						new MiddleTest02().setVisible(true);
+					}
+				} else {
+					new Check().setVisible(true);
+				}
+			}
+		});
+		buttonGroup.add(button_2);
+		button_2.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		button_2.setBackground(Color.GREEN);
+		button_2.setBounds(277, 620, 174, 52);
+		contentPane.add(button_2);
+
+		// 라벨 설정
+		JLabel lblNewLabel = new JLabel("Q1. 제어자의 조합으로 알맞지 않은것은??");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		lblNewLabel.setBounds(50, 80, 600, 100);
+		contentPane.add(lblNewLabel);
 
 		JLabel label = new JLabel("");
 		label.setOpaque(true);
@@ -162,37 +170,6 @@ public class MiddleTest01 extends JavaTestList {
 		label_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
 		label_2.setBounds(675, 12, 47, 34);
 		contentPane.add(label_2);
-
-		JButton button_2 = new JButton("다음 문제");
-		button_2.setIcon(new ImageIcon(MiddleTest01.class.getResource("/image/Right.png")));
-
-		button_2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if (rdbtnNewRadioButton.isSelected() || rdbtnPublicAbstract.isSelected() || rdbtnStatic.isSelected()
-						|| rdbtnPrivateAbstract.isSelected()) {
-					if (rdbtnPublicAbstract.isSelected()) {
-						MiddleCount++;
-						dispose();
-						setVisible(false);
-						new MiddleTest02(MiddleCount).setVisible(true);
-						
-					} else {
-						dispose();
-						setVisible(false);
-						new MiddleTest02(MiddleCount).setVisible(true);
-					}
-				}else {
-					new Check().setVisible(true);
-				}
-			}
-		});
-
-		buttonGroup.add(button_2);
-		button_2.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		button_2.setBackground(Color.GREEN);
-		button_2.setBounds(277, 620, 174, 52);
-		contentPane.add(button_2);
-
+	
 	}
 }

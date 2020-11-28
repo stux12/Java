@@ -25,7 +25,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.ImageIcon;
 
-public class MiddleTest04 extends MiddleTest03 {
+public class MiddleTest04 extends JavaTestList {
 
 	private JPanel contentPane;
 	private JRadioButton rdbtnNewRadioButton;
@@ -33,27 +33,9 @@ public class MiddleTest04 extends MiddleTest03 {
 	private JRadioButton radioButton_1;
 	private JRadioButton radioButton_2;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MiddleTest04 frame = new MiddleTest04(MiddleCount);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
-	public MiddleTest04(int middleCount) {
-		super(middleCount);
+	public MiddleTest04() {
+		// 창 설정
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 750);
 		contentPane = new JPanel();
@@ -61,66 +43,60 @@ public class MiddleTest04 extends MiddleTest03 {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
+		// 버튼 설정
 		rdbtnNewRadioButton = new JRadioButton("A||B = ture 이다.");
 		rdbtnNewRadioButton.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		rdbtnNewRadioButton.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnNewRadioButton);
 		rdbtnNewRadioButton.setEnabled(true);
-
 		rdbtnNewRadioButton.setBounds(80, 200, 550, 50);
 		contentPane.add(rdbtnNewRadioButton);
-	
-		
+
 		rdbtnKajaintA = new JRadioButton("B||A = ture 이다.");
 		rdbtnKajaintA.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		rdbtnKajaintA.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnKajaintA);
 		rdbtnKajaintA.setEnabled(true);
-
 		rdbtnKajaintA.setBounds(80, 300, 550, 50);
 		contentPane.add(rdbtnKajaintA);
-		
+
 		JRadioButton rdbtnAbTure = new JRadioButton("A&&B = ture 이다.");
 		rdbtnAbTure.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		rdbtnAbTure.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnAbTure);
 		rdbtnAbTure.setEnabled(true);
-
 		rdbtnAbTure.setBounds(80, 400, 550, 50);
 		contentPane.add(rdbtnAbTure);
-		
+
 		JRadioButton rdbtnbTure = new JRadioButton("!B = ture 이다.");
 		rdbtnbTure.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		rdbtnbTure.setBackground(Color.GREEN);
 		buttonGroup.add(rdbtnbTure);
 		rdbtnbTure.setEnabled(true);
-
 		rdbtnbTure.setBounds(80, 500, 550, 50);
 		contentPane.add(rdbtnbTure);
-		
-		JLabel lblNewLabel = new JLabel("Q4. A가 ture이고 B가 false일때 틀린 식은???");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		lblNewLabel.setBounds(50, 80, 600, 100);
-		contentPane.add(lblNewLabel);
-		
-		JButton button = new JButton("처음으로");
-		button.setIcon(new ImageIcon(MiddleTest04.class.getResource("/image/Ghome.png")));
+
+		JButton button = new JButton("이전으로");
+		button.setIcon(new ImageIcon(MiddleTest04.class.getResource("/image/left2.png")));
 		button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MiddleCount=0;
+				if (Middle[2] == 0) {
+					MiddleCount--;
+				} else {
+					MiddletleCount--;
+				}
 				dispose();
 				setVisible(false);
-				new MiddleTest01(MiddleCount).setVisible(true);
+				new MiddleTest03().setVisible(true);
 			}
 		});
 		button.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		button.setBackground(Color.GREEN);
 		button.setBounds(50, 620, 174, 52);
 		contentPane.add(button);
-		
+
 		JButton button_1 = new JButton("포기해요?");
 		button_1.setIcon(new ImageIcon(MiddleTest04.class.getResource("/image/X.png")));
 		button_1.addMouseListener(new MouseAdapter() {
@@ -128,35 +104,14 @@ public class MiddleTest04 extends MiddleTest03 {
 			public void mouseClicked(MouseEvent e) {
 				dispose();
 				setVisible(false);
-				new MiddleTestLast(MiddleCount).setVisible(true);
+				new MiddleTestLast().setVisible(true);
 			}
 		});
 		button_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		button_1.setBackground(Color.GREEN);
 		button_1.setBounds(520, 620, 174, 52);
 		contentPane.add(button_1);
-		
-		JLabel label = new JLabel("");
-		label.setOpaque(true);
-		label.setForeground(Color.RED);
-		label.setBackground(Color.BLACK);
-		label.setBounds(0, 56, 734, 1);
-		contentPane.add(label);
-		
-		JLabel label_1 = new JLabel("난이도 中");
-		label_1.setIcon(new ImageIcon(MiddleTest01.class.getResource("/image/middle.png")));
-		label_1.setOpaque(true);
-		label_1.setHorizontalAlignment(SwingConstants.LEFT);
-		label_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		label_1.setBackground(Color.GREEN);
-		label_1.setBounds(12, 12, 108, 35);
-		contentPane.add(label_1);
-		
-		JLabel label_2 = new JLabel("4/10");
-		label_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		label_2.setBounds(675, 12, 47, 34);
-		contentPane.add(label_2);
-		
+
 		JButton button_2 = new JButton("다음 문제");
 		button_2.setIcon(new ImageIcon(MiddleTest04.class.getResource("/image/Right.png")));
 
@@ -167,15 +122,18 @@ public class MiddleTest04 extends MiddleTest03 {
 						|| rdbtnbTure.isSelected()) {
 					if (rdbtnAbTure.isSelected()) {
 						MiddleCount++;
+						Middle[3] = 0;
 						dispose();
 						setVisible(false);
-						new MiddleTest05(MiddleCount).setVisible(true);
+						new MiddleTest05().setVisible(true);
 					} else {
+						MiddletleCount++;
+						Middle[3] = 4;
 						dispose();
 						setVisible(false);
-						new MiddleTest05(MiddleCount).setVisible(true);
+						new MiddleTest05().setVisible(true);
 					}
-				}else {
+				} else {
 					new Check().setVisible(true);
 				}
 			}
@@ -186,9 +144,34 @@ public class MiddleTest04 extends MiddleTest03 {
 		button_2.setBackground(Color.GREEN);
 		button_2.setBounds(284, 620, 174, 52);
 		contentPane.add(button_2);
-		
-		
-		
-		
+
+		// 라벨 설정
+		JLabel lblNewLabel = new JLabel("Q4. A가 ture이고 B가 false일때 틀린 식은???");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		lblNewLabel.setBounds(50, 80, 600, 100);
+		contentPane.add(lblNewLabel);
+
+		JLabel label = new JLabel("");
+		label.setOpaque(true);
+		label.setForeground(Color.RED);
+		label.setBackground(Color.BLACK);
+		label.setBounds(0, 56, 734, 1);
+		contentPane.add(label);
+
+		JLabel label_1 = new JLabel("난이도 中");
+		label_1.setIcon(new ImageIcon(MiddleTest01.class.getResource("/image/middle.png")));
+		label_1.setOpaque(true);
+		label_1.setHorizontalAlignment(SwingConstants.LEFT);
+		label_1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		label_1.setBackground(Color.GREEN);
+		label_1.setBounds(12, 12, 108, 35);
+		contentPane.add(label_1);
+
+		JLabel label_2 = new JLabel("4/10");
+		label_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		label_2.setBounds(675, 12, 47, 34);
+		contentPane.add(label_2);
+
 	}
 }

@@ -29,140 +29,106 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class EasyTest10 extends EasyTest09 {
+public class EasyTest10 extends JavaTestList {
 
-	private JPanel contentPane;
+	private JPanel Pane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					EasyTest10 frame = new EasyTest10(EasyCount);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 * @param easyCount 
-	 */
-	public EasyTest10(int easyCount) {
-		super(easyCount);
+	public EasyTest10() {
+		// 창 설정
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 750);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.YELLOW);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("난이도 下");
-		lblNewLabel.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/chick.png")));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel.setOpaque(true);
-		lblNewLabel.setBackground(Color.YELLOW);
-		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		lblNewLabel.setBounds(12, 10, 94, 34);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setForeground(Color.RED);
-		lblNewLabel_1.setOpaque(true);
-		lblNewLabel_1.setBackground(Color.BLACK);
-		lblNewLabel_1.setBounds(0, 55, 734, 1);
-		contentPane.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("10/10");
-		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(670, 11, 52, 27);
-		contentPane.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("Q 10 컬렉션 인터페이스의 종류로 틀린것은??");
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setFont(new Font("맑은 고딕", Font.PLAIN, 30));
-		lblNewLabel_3.setBounds(35, 83, 659, 111);
-		contentPane.add(lblNewLabel_3);
-		
+		Pane = new JPanel();
+		Pane.setBackground(Color.YELLOW);
+		Pane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(Pane);
+		Pane.setLayout(null);
+
+		// 버튼 설정
 		JButton btnNewButton = new JButton("Map 인터페이스");
 		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnNewButton.setBackground(new Color(255, 255, 0));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[9] = 10;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTestLast(EasyCount).setVisible(true);
+				new EasyTestLast().setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(35, 252, 659, 50);
-		contentPane.add(btnNewButton);
-		
+		Pane.add(btnNewButton);
+
 		JButton btnExamtion = new JButton("Examtion 인터페이스");
 		btnExamtion.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnExamtion.setBackground(new Color(255, 255, 0));
 		btnExamtion.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[9] = 0;
 				EasyCount++;
 				dispose();
 				setVisible(false);
-				new EasyTestLast(EasyCount).setVisible(true);
+				new EasyTestLast().setVisible(true);
 			}
 		});
 		btnExamtion.setBounds(35, 348, 659, 50);
-		contentPane.add(btnExamtion);
-		
+		Pane.add(btnExamtion);
+
 		JButton btnSet = new JButton("Set 인터페이스");
 		btnSet.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnSet.setBackground(new Color(255, 255, 0));
 		btnSet.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[9] = 10;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTestLast(EasyCount).setVisible(true);
+				new EasyTestLast().setVisible(true);
 			}
 		});
 		btnSet.setBounds(35, 435, 659, 50);
-		contentPane.add(btnSet);
-		
+		Pane.add(btnSet);
+
 		JButton btnList = new JButton("Iterator 인터페이스");
 		btnList.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnList.setBackground(new Color(255, 255, 0));
 		btnList.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[9] = 10;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTestLast(EasyCount).setVisible(true);
+				new EasyTestLast().setVisible(true);
 			}
 		});
 		btnList.setBounds(35, 523, 659, 50);
-		contentPane.add(btnList);
-		
-		JButton button_5 = new JButton("처음문제로");
-		button_5.setIcon(new ImageIcon(EasyTest10.class.getResource("/image/Yhome.png")));
+		Pane.add(btnList);
+
+		JButton button_5 = new JButton("이전문제로");
+		button_5.setIcon(new ImageIcon(EasyTest10.class.getResource("/image/left.png")));
 		button_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				EasyCount=0;
+				if(Easytle[8] == 0) {
+					EasyCount--;
+				}
+				else {
+					EasytleCount--;
+				}
 				dispose();
 				setVisible(false);
-				new EasyTest01(EasyCount).setVisible(true);
+				new EasyTest09().setVisible(true);
 			}
 		});
 		button_5.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		button_5.setBackground(new Color(255, 255, 0));
 		button_5.setBounds(35, 615, 174, 52);
-		contentPane.add(button_5);
-		
+		Pane.add(button_5);
+
 		JButton button_4 = new JButton("포기해요?");
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -174,12 +140,40 @@ public class EasyTest10 extends EasyTest09 {
 			public void mouseClicked(MouseEvent e) {
 				dispose();
 				setVisible(false);
-				new EasyTestLast(EasyCount).setVisible(true);
+				new EasyTestLast().setVisible(true);
 			}
 		});
 		button_4.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		button_4.setBackground(new Color(255, 255, 0));
 		button_4.setBounds(520, 615, 174, 52);
-		contentPane.add(button_4);
+		Pane.add(button_4);
+
+		// 라벨 설정
+		JLabel lblNewLabel = new JLabel("난이도 下");
+		lblNewLabel.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/chick.png")));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel.setOpaque(true);
+		lblNewLabel.setBackground(Color.YELLOW);
+		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		lblNewLabel.setBounds(12, 10, 94, 34);
+		Pane.add(lblNewLabel);
+
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setForeground(Color.RED);
+		lblNewLabel_1.setOpaque(true);
+		lblNewLabel_1.setBackground(Color.BLACK);
+		lblNewLabel_1.setBounds(0, 55, 734, 1);
+		Pane.add(lblNewLabel_1);
+
+		JLabel lblNewLabel_2 = new JLabel("10/10");
+		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		lblNewLabel_2.setBounds(670, 11, 52, 27);
+		Pane.add(lblNewLabel_2);
+
+		JLabel lblNewLabel_3 = new JLabel("Q 10 컬렉션 인터페이스의 종류로 틀린것은??");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setFont(new Font("맑은 고딕", Font.PLAIN, 30));
+		lblNewLabel_3.setBounds(35, 83, 659, 111);
+		Pane.add(lblNewLabel_3);
 	}
 }

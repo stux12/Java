@@ -29,160 +29,155 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class EasyTest02 extends EasyTest01 {
+public class EasyTest02 extends JavaTestList {
 
-	private JPanel contentPane;
+	private JPanel Pane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					EasyTest02 frame = new EasyTest02(EasyCount);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	public EasyTest02() {
 
-	/**
-	 * Create the frame.
-	 * @param easyCount 
-	 * @param easyCount 
-	 * @param easyCount 
-	 */
-	public EasyTest02(int easyCount) {
-		super(easyCount);
+		// 창 설정
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 750);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.YELLOW);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("난이도 下");
-		lblNewLabel.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/chick.png")));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel.setOpaque(true);
-		lblNewLabel.setBackground(Color.YELLOW);
-		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		lblNewLabel.setBounds(12, 10, 94, 34);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setForeground(Color.RED);
-		lblNewLabel_1.setOpaque(true);
-		lblNewLabel_1.setBackground(Color.BLACK);
-		lblNewLabel_1.setBounds(0, 55, 734, 1);
-		contentPane.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("2/10");
-		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(681, 11, 41, 27);
-		contentPane.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("<html>Q 02 String a = \"ondal\";<br/>System.out.print(a)를 하면 무엇이 출력될까요??\r\n");
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setFont(new Font("맑은 고딕", Font.PLAIN, 30));
-		lblNewLabel_3.setBounds(35, 83, 659, 111);
-		contentPane.add(lblNewLabel_3);
-		
-		JButton btnNewButton = new JButton("아무것도 출력되지 않는다");
-		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		btnNewButton.setBackground(new Color(255, 255, 0));
-		btnNewButton.addMouseListener(new MouseAdapter() {
+		Pane = new JPanel();
+		Pane.setBackground(Color.YELLOW);
+		Pane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(Pane);
+		Pane.setLayout(null);
+
+		// 버튼 설정
+		JButton button1 = new JButton("아무것도 출력되지 않는다");
+		button1.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		button1.setBackground(new Color(255, 255, 0));
+		button1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[1] = 2;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest03(EasyCount).setVisible(true);
+				new EasyTest03().setVisible(true);
 			}
 		});
-		btnNewButton.setBounds(35, 252, 659, 50);
-		contentPane.add(btnNewButton);
-		
-		JButton btnOndai = new JButton("ondai");
-		btnOndai.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		btnOndai.setBackground(new Color(255, 255, 0));
-		btnOndai.setForeground(new Color(0, 0, 0));
-		btnOndai.addMouseListener(new MouseAdapter() {
+		button1.setBounds(35, 252, 659, 50);
+		Pane.add(button1);
+
+		JButton button2 = new JButton("ondai");
+		button2.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		button2.setBackground(new Color(255, 255, 0));
+		button2.setForeground(new Color(0, 0, 0));
+		button2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[1] = 2;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest03(EasyCount).setVisible(true);
+				new EasyTest03().setVisible(true);
 			}
 		});
-		btnOndai.setBounds(35, 348, 659, 50);
-		contentPane.add(btnOndai);
-		
-		JButton btnUndal = new JButton("undal");
-		btnUndal.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		btnUndal.setBackground(new Color(255, 255, 0));
-		btnUndal.addMouseListener(new MouseAdapter() {
+		button2.setBounds(35, 348, 659, 50);
+		Pane.add(button2);
+
+		JButton button3 = new JButton("undal");
+		button3.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		button3.setBackground(new Color(255, 255, 0));
+		button3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[1] = 2;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest03(EasyCount).setVisible(true);
+				new EasyTest03().setVisible(true);
 			}
 		});
-		btnUndal.setBounds(35, 435, 659, 50);
-		contentPane.add(btnUndal);
-		
-		JButton btnOndal = new JButton("ondal");
-		btnOndal.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		btnOndal.setBackground(new Color(255, 255, 0));
-		btnOndal.addMouseListener(new MouseAdapter() {
+		button3.setBounds(35, 435, 659, 50);
+		Pane.add(button3);
+
+		JButton button4 = new JButton("ondal");
+		button4.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		button4.setBackground(new Color(255, 255, 0));
+		button4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[1] = 0;
 				EasyCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest03(EasyCount).setVisible(true);
+				new EasyTest03().setVisible(true);
 			}
 		});
-		btnOndal.setBounds(35, 523, 659, 50);
-		contentPane.add(btnOndal);
-		
-		JButton button_5 = new JButton("처음문제로");
-		button_5.setIcon(new ImageIcon(EasyTest02.class.getResource("/image/Yhome.png")));
-		button_5.addMouseListener(new MouseAdapter() {
+		button4.setBounds(35, 523, 659, 50);
+		Pane.add(button4);
+
+		JButton back = new JButton("이전문제로");
+		back.setIcon(new ImageIcon(EasyTest02.class.getResource("/image/left.png")));
+		back.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				EasyCount=0;
+				if(Easytle[0] == 0) {
+					EasyCount--;
+				}
+				else {
+					EasytleCount--;
+				}
 				dispose();
 				setVisible(false);
-				new EasyTest01(EasyCount).setVisible(true);
+				new EasyTest01().setVisible(true);
 			}
 		});
-		button_5.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		button_5.setBackground(new Color(255, 255, 0));
-		button_5.setBounds(35, 615, 174, 52);
-		contentPane.add(button_5);
-		
-		JButton button_4 = new JButton("포기해요?");
-		button_4.addActionListener(new ActionListener() {
+		back.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		back.setBackground(new Color(255, 255, 0));
+		back.setBounds(35, 615, 174, 52);
+		Pane.add(back);
+
+		JButton exit = new JButton("포기해요?");
+		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_4.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/smiley.png")));
-		button_4.addMouseListener(new MouseAdapter() {
+		exit.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/smiley.png")));
+		exit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				dispose();
 				setVisible(false);
-				new EasyTestLast(EasyCount).setVisible(true);
+				new EasyTestLast().setVisible(true);
 			}
 		});
-		button_4.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		button_4.setBackground(new Color(255, 255, 0));
-		button_4.setBounds(520, 615, 174, 52);
-		contentPane.add(button_4);
+		exit.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		exit.setBackground(new Color(255, 255, 0));
+		exit.setBounds(520, 615, 174, 52);
+		Pane.add(exit);
+
+		// 라벨 설정
+		JLabel Level = new JLabel("난이도 下");
+		Level.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/chick.png")));
+		Level.setHorizontalAlignment(SwingConstants.LEFT);
+		Level.setOpaque(true);
+		Level.setBackground(Color.YELLOW);
+		Level.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		Level.setBounds(12, 10, 94, 34);
+		Pane.add(Level);
+
+		JLabel jul = new JLabel("");
+		jul.setForeground(Color.RED);
+		jul.setOpaque(true);
+		jul.setBackground(Color.BLACK);
+		jul.setBounds(0, 55, 734, 1);
+		Pane.add(jul);
+
+		JLabel number = new JLabel("2/10");
+		number.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		number.setBounds(681, 11, 41, 27);
+		Pane.add(number);
+
+		JLabel monje = new JLabel(
+				"<html>Q 02 String a = \"ondal\";<br/>System.out.print(a)를 하면 무엇이 출력될까요??\r\n");
+		monje.setHorizontalAlignment(SwingConstants.CENTER);
+		monje.setFont(new Font("맑은 고딕", Font.PLAIN, 30));
+		monje.setBounds(35, 83, 659, 111);
+		Pane.add(monje);
+
 	}
 }

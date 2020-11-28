@@ -1,6 +1,5 @@
 package D_HardTest;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -14,34 +13,13 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JProgressBar;
-import javax.swing.JTextPane;
-import javax.swing.JComboBox;
 
-public class HardTest02 extends HardRandom {
+import A_Main.JavaTestList;
+
+public class HardTest02 extends JavaTestList {
 
 	private JPanel contentPane;
-	private Timer time;
-	private int timer=10;
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					HardTest02 frame = new HardTest02();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public HardTest02() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 750);
@@ -76,7 +54,7 @@ public class HardTest02 extends HardRandom {
 		label.setBounds(0, 55, 734, 1);
 		contentPane.add(label);
 		
-		JLabel lblqMain = new JLabel("<html>Q0. 다음 선택중 틀린것은 어떤것일까요??");
+		JLabel lblqMain = new JLabel("<html>Q"+num+". 다음 선택중 틀린것은 어떤것일까요??");
 		lblqMain.setHorizontalAlignment(SwingConstants.CENTER);
 		lblqMain.setForeground(Color.RED);
 		lblqMain.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
@@ -90,6 +68,7 @@ public class HardTest02 extends HardRandom {
 		label_2.setBounds(405, 300, 238, 70);
 		contentPane.add(label_2);
 		
+		timer=10;
 		time= new Timer(1000, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -98,8 +77,8 @@ public class HardTest02 extends HardRandom {
 				timer--;
 				}
 				else if(timer<0){
-					HardCountTle++;
-					HardCountTle2 = 2;
+					HardtleCount++;
+					Hard[num]=num;
 					dispose();
 					setVisible(false);
 					new HardTest02TimeOut().setVisible(true);

@@ -19,30 +19,10 @@ import A_Main.JavaTestList;
 public class HardRandom extends JavaTestList {
 
 	private JPanel contentPane;
-	protected static int turn;
-	protected static int[] test = new int[4];
-	protected static int num;
+	
 	
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					HardRandom frame = new HardRandom();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public HardRandom() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -57,12 +37,11 @@ public class HardRandom extends JavaTestList {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-//				turn = (int)Math.ceil(10*Math.random());
-				turn=1;
+				turn = (int)Math.ceil(10*Math.random());
 				switch (turn) {
 				case 5:
-					if(test[4]!=1) {
-						test[4] = 1;
+					if(test[4]!=5) {
+						test[4] = 5;
 						num++;
 						dispose();
 						setVisible(false);
@@ -70,8 +49,8 @@ public class HardRandom extends JavaTestList {
 						break;
 						}
 				case 4:
-					if(test[3]!=1) {
-						test[3] = 1;
+					if(test[3]!=4) {
+						test[3] = 4;
 						num++;
 						dispose();
 						setVisible(false);
@@ -79,8 +58,8 @@ public class HardRandom extends JavaTestList {
 						break;
 						}
 				case 3:
-					if(test[2]!=1) {
-						test[2] = 1;
+					if(test[2]!=3) {
+						test[2] = 3;
 						num++;
 						dispose();
 						setVisible(false);
@@ -88,8 +67,8 @@ public class HardRandom extends JavaTestList {
 						break;
 						}
 				case 2:
-					if(test[1]!=1) {
-					test[1] = 1;
+					if(test[1]!=2) {
+					test[1] = 2;
 					num++;
 					dispose();
 					setVisible(false);

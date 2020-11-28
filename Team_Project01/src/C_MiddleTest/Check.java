@@ -19,26 +19,9 @@ public class Check extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Check frame = new Check();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public Check() {
+		// 창 설정
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -47,6 +30,7 @@ public class Check extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		// 버튼 설정
 		JButton btnNewButton = new JButton("확     인");
 		btnNewButton.setForeground(new Color(0, 0, 0));
 		btnNewButton.setBackground(new Color(255, 0, 0));
@@ -61,6 +45,7 @@ public class Check extends JFrame {
 		btnNewButton.setBounds(121, 191, 190, 42);
 		contentPane.add(btnNewButton);
 		
+		// 라벨 설정
 		JLabel lblNewLabel = new JLabel("하나라도 선택하세요!!");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);

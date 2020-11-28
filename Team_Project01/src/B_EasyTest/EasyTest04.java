@@ -29,139 +29,106 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class EasyTest04 extends EasyTest03 {
+public class EasyTest04 extends JavaTestList {
 
-	private JPanel contentPane;
+	private JPanel Pane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					EasyTest04 frame = new EasyTest04(EasyCount);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 * @param easyCount 
-	 */
-	public EasyTest04(int easyCount) {
-		super(easyCount);
+	public EasyTest04() {
+		// 창 설정
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 750, 750);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.YELLOW);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("난이도 下");
-		lblNewLabel.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/chick.png")));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel.setOpaque(true);
-		lblNewLabel.setBackground(Color.YELLOW);
-		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
-		lblNewLabel.setBounds(12, 10, 94, 34);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setForeground(Color.RED);
-		lblNewLabel_1.setOpaque(true);
-		lblNewLabel_1.setBackground(Color.BLACK);
-		lblNewLabel_1.setBounds(0, 55, 734, 1);
-		contentPane.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("4/10");
-		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(681, 11, 41, 27);
-		contentPane.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("<Html>Q 05 While(true)<br/>{반복을 그만하기 위한 방법으로 알맞은것은??};");
-		lblNewLabel_3.setFont(new Font("맑은 고딕", Font.PLAIN, 30));
-		lblNewLabel_3.setBounds(35, 83, 659, 111);
-		contentPane.add(lblNewLabel_3);
-		
+		Pane = new JPanel();
+		Pane.setBackground(Color.YELLOW);
+		Pane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(Pane);
+		Pane.setLayout(null);
+
+		// 버튼 설정
 		JButton btnNewButton = new JButton("false;");
 		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnNewButton.setBackground(new Color(255, 255, 0));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[3] = 4;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest05(EasyCount).setVisible(true);
+				new EasyTest05().setVisible(true);
 			}
 		});
 		btnNewButton.setBounds(35, 252, 659, 50);
-		contentPane.add(btnNewButton);
-		
+		Pane.add(btnNewButton);
+
 		JButton btnContinue = new JButton("continue;");
 		btnContinue.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnContinue.setBackground(new Color(255, 255, 0));
 		btnContinue.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[3] = 4;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest05(EasyCount).setVisible(true);
+				new EasyTest05().setVisible(true);
 			}
 		});
 		btnContinue.setBounds(35, 348, 659, 50);
-		contentPane.add(btnContinue);
-		
+		Pane.add(btnContinue);
+
 		JButton btnBreak = new JButton("break;");
 		btnBreak.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnBreak.setBackground(new Color(255, 255, 0));
 		btnBreak.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[3] = 0;
 				EasyCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest05(EasyCount).setVisible(true);
+				new EasyTest05().setVisible(true);
 			}
 		});
 		btnBreak.setBounds(35, 435, 659, 50);
-		contentPane.add(btnBreak);
-		
+		Pane.add(btnBreak);
+
 		JButton btnStop = new JButton("stop;");
 		btnStop.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		btnStop.setBackground(new Color(255, 255, 0));
 		btnStop.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Easytle[3] = 4;
+				EasytleCount++;
 				dispose();
 				setVisible(false);
-				new EasyTest05(EasyCount).setVisible(true);
+				new EasyTest05().setVisible(true);
 			}
 		});
 		btnStop.setBounds(35, 523, 659, 50);
-		contentPane.add(btnStop);
-		
-		JButton button_5 = new JButton("처음문제로");
-		button_5.setIcon(new ImageIcon(EasyTest04.class.getResource("/image/Yhome.png")));
+		Pane.add(btnStop);
+
+		JButton button_5 = new JButton("이전문제로");
+		button_5.setIcon(new ImageIcon(EasyTest04.class.getResource("/image/left.png")));
 		button_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				EasyCount=0;
+				if(Easytle[2] == 0) {
+					EasyCount--;
+				}
+				else {
+					EasytleCount--;
+				}
 				dispose();
 				setVisible(false);
-				new EasyTest01(EasyCount).setVisible(true);
+				new EasyTest03().setVisible(true);
 			}
 		});
 		button_5.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		button_5.setBackground(new Color(255, 255, 0));
 		button_5.setBounds(35, 615, 174, 52);
-		contentPane.add(button_5);
-		
+		Pane.add(button_5);
+
 		JButton button_4 = new JButton("포기해요?");
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -173,12 +140,39 @@ public class EasyTest04 extends EasyTest03 {
 			public void mouseClicked(MouseEvent e) {
 				dispose();
 				setVisible(false);
-				new EasyTestLast(EasyCount).setVisible(true);
+				new EasyTestLast().setVisible(true);
 			}
 		});
 		button_4.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
 		button_4.setBackground(new Color(255, 255, 0));
 		button_4.setBounds(520, 615, 174, 52);
-		contentPane.add(button_4);
+		Pane.add(button_4);
+
+		// 라벨 설정
+		JLabel lblNewLabel = new JLabel("난이도 下");
+		lblNewLabel.setIcon(new ImageIcon(EasyTest01.class.getResource("/image/chick.png")));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel.setOpaque(true);
+		lblNewLabel.setBackground(Color.YELLOW);
+		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 15));
+		lblNewLabel.setBounds(12, 10, 94, 34);
+		Pane.add(lblNewLabel);
+
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setForeground(Color.RED);
+		lblNewLabel_1.setOpaque(true);
+		lblNewLabel_1.setBackground(Color.BLACK);
+		lblNewLabel_1.setBounds(0, 55, 734, 1);
+		Pane.add(lblNewLabel_1);
+
+		JLabel lblNewLabel_2 = new JLabel("4/10");
+		lblNewLabel_2.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		lblNewLabel_2.setBounds(681, 11, 41, 27);
+		Pane.add(lblNewLabel_2);
+
+		JLabel lblNewLabel_3 = new JLabel("<Html>Q 04 While(true)<br/>{반복을 그만하기 위한 방법으로 알맞은것은??};");
+		lblNewLabel_3.setFont(new Font("맑은 고딕", Font.PLAIN, 30));
+		lblNewLabel_3.setBounds(35, 83, 659, 111);
+		Pane.add(lblNewLabel_3);
 	}
 }
