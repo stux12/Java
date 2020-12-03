@@ -15,8 +15,6 @@ public class rain {
 		
 		int[][] soo = new int [5][5];
 		int num = 0;
-		
-		
 		for(int dol=0; dol<9; dol++) {
 			for(int i=0; i<soo.length; i++) {
 				
@@ -24,17 +22,15 @@ public class rain {
 				if(j>=0&&j<5) {
 					num++;
 					soo[i][j] = num;
-				}//if_end
-			}//두번째for_end
-		}//첫번째for_end
-		
-		
+				}
+			}
+		}
 		for(int i=0; i<soo.length; i++) {
 			for(int j=0; j<soo[i].length; j++) {
 				System.out.print(soo[i][j] + "\t");
-			}//두번쨰for_end
+			}
 			System.out.println();
-		}//첫번째for_end
+		}
 		
 		/*
 		 1	3	6	10	15
