@@ -33,10 +33,14 @@ public class MenuSelect extends MenuDetail {
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
+					
 				}
 			}
 		});
 	}
+	
+	
+	
 
 	/**
 	 * Create the frame.

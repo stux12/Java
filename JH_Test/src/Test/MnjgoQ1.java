@@ -14,6 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JList;
+import javax.swing.AbstractListModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MnjgoQ1 extends JFrame {
 
@@ -57,6 +61,7 @@ public class MnjgoQ1 extends JFrame {
       textField_1.setColumns(10);
       
       JComboBox comboBox = new JComboBox();
+      
       comboBox.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent arg0) {
             
@@ -78,5 +83,15 @@ public class MnjgoQ1 extends JFrame {
       lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
       lblNewLabel.setBounds(115, 328, 85, 18);
       contentPane.add(lblNewLabel);
+      
+      JList list = new JList();
+      list.addMouseListener(new MouseAdapter() {
+      	@Override
+      	public void mouseClicked(MouseEvent e) {
+      		if(list.isSelectedIndex(0)) {
+      			System.out.println("바보");
+      		}
+      	}
+      });
    }
 }
