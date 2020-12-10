@@ -173,7 +173,7 @@ class JButtonClass extends JFrame  implements ActionListener{
 
 public class JButtonMainClass {// JButtonMainClass .java
 	public static void main(String args[]) {
-		test2.JButtonClass buttonClass = new JButtonClass();
+//		test2.JButtonClass buttonClass = new JButtonClass();
 		
 		
 

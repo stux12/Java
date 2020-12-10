@@ -1,15 +1,15 @@
-package java_28_API_IO_Reader_Writerz;
+package java_28_API.IO_Reader_Writerz;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class FileCopy {
+public class FileCopy2 {
 
 	public static void main(String[] args) {
 		
-		// 파일을 읽음과 동시에 쓰기 = copy~
+		// 이 방법이 조금더 빠름
 		InputStream is = null;
 		OutputStream os = null;
 		
@@ -17,16 +17,18 @@ public class FileCopy {
 			is = new FileInputStream("경로");
 			os = new FileOutputStream("경로");
 			
+			byte[] bs = new byte[5];
+			
 			while(true) {
-				int i = is.read();
-				if(i == -1) {
+				int count = is.read();
+				if(count == -1) {
 					break;
 				}
-				os.write(i);
+				os.write(bs, 0, count);
 			}
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
-		} finally {
+		}finally {
 			if(is != null) {
 				try {
 					is.close();
@@ -37,13 +39,11 @@ public class FileCopy {
 			if(os != null) {
 				try {
 					os.close();
-				}catch(Exception e){
+				}catch (Exception e) {
 					System.out.println(e.getMessage());
 				}
 			}
 		}
-		
-		
 		
 	}
 }

@@ -1,4 +1,4 @@
-package java_28_API_IO_Reader_Writerz;
+package java_28_API.IO_Reader_Writerz;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
