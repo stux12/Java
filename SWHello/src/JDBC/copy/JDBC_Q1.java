@@ -8,15 +8,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class JDBC_Copy {
+public class JDBC_Q1 {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("검색할 이름을 입력하세요");
-		String who = sc.next();
-		who = who.toUpperCase();
+		System.out.println("급여 얼마이상?");
+		int sal = sc.nextInt();
+		System.out.println("매니저아이디 얼마이상?");
+		int mid = sc.nextInt();
 		
 		// 접속 객체 con1선언
 		Connection con1 = null;
@@ -30,11 +31,10 @@ public class JDBC_Copy {
 //			System.out.println("접속했어영");
 
 //			sql 문장은 맞지만 역할은 X
-		String sql2 = "select * from employees" // 줄을 바꾸면 무조건 한칸 띄고 시작
-//						+ " where department_id=30";// +할시에는 띄워쓰기를 해야지만 읽어짐
-//				+ " where upper(first_name) = '"+who+"'";
-//				+ " where upper(first_name) = ?"; // 전체문장이 아직 결정안된상태, 문법이 달라짐
-				+ " where upper(first_name) like ?";
+		String sql2 = "select first_name 이름, salary 봉급, manager_id 매니저아이디"
+				+" from employees"
+				+" where (salary >= ? or manager_id >= ?)"
+				+" and manager_id is not null";
 		
 		// 연동 2가지 방법
 //			1)createStatement
@@ -42,7 +42,8 @@ public class JDBC_Copy {
 		// 문장객체
 //1)	Statement st2 = con1.createStatement();
 		PreparedStatement ps2 = con1.prepareStatement(sql2);
-		ps2.setString(1, '%'+who+'%');//?번째, 값
+		ps2.setInt(1, sal);//?번째, 값
+		ps2.setInt(2, mid);//?번째, 값
 		
 //			ResultSet
 //			종이박스에 들어감               	조회를 실행하라 총107개
@@ -50,18 +51,17 @@ public class JDBC_Copy {
 		ResultSet rs2 = ps2.executeQuery();
 
 		
+//		System.out.println("번호"+"\t"+"이름"+"\t"+"봉급"+"\t"+"매니저아이디");
 		while (rs2.next()) {// data있어?
 
-			int id = rs2.getInt("employee_id");
-//			int id2 = Integer.parseInt(rs2.getString("employee_id"));
 
-			String fname = rs2.getString("first_name");
+			String fname = rs2.getString("이름");
 
-			String h_date = rs2.getString("hire_date");// 날짜도있지만 시간 분 초 
-
-			String hire_date = h_date.substring(0, 10);// 날짜만출력하려고 쓰는거임 
-
-			System.out.println(rs2.getRow() + "\t" + id + "\t" + fname + "\t" + hire_date);
+			int salary = rs2.getInt("봉급");
+			
+			int manager_id = rs2.getInt("매니저아이디");
+			
+			System.out.println(rs2.getRow() + "\t" + fname + "\t" + salary + "\t" + manager_id);
 
 		} // while end
 
