@@ -29,7 +29,7 @@ public class JDBC_T1 {
 		
 		
 		//자료 insert
-//		String sql2 = "insert into teltable5 values(?,?,?,?)";
+		String sql2 = "insert into teltable5 values(?,?,?,?)";
 		
 		//자료 delete
 //		String sql3 = "delete from teltable5"
@@ -44,22 +44,22 @@ public class JDBC_T1 {
 //		String sql5 = "insert into teltable5 values(1,'김진환','010-2222-3333',to_date(?,'yyyy/mm/dd hh24:mi:ss'))";
 		
 		//자료 select
-		String sql6 = "select id, name, tel, to_char(d, 'yyyy \"년\"mm \"월\" dd \"일\" hh24:mi:ss') from teltable5"
-					+ " where name = '김진환'";
+//		String sql6 = "select id, name, tel, to_char(d, 'yyyy \"년\"mm \"월\" dd \"일\" hh24:mi:ss') from teltable5"
+//					+ " where name = '김진환'";
 		
-//		PreparedStatement pst1 = con1.prepareStatement(sql2);
+		PreparedStatement pst1 = con1.prepareStatement(sql2);
 //		PreparedStatement pst2 = con1.prepareStatement(sql3);
 //		PreparedStatement pst3 = con1.prepareStatement(sql4);
 //		PreparedStatement pst4 = con1.prepareStatement(sql5);
-		PreparedStatement pst4 = con1.prepareStatement(sql6);
+//		PreparedStatement pst4 = con1.prepareStatement(sql6);
 
 		
 		
 		//hh = 0~23시 kk = 1~24시로 표현
 		//날짜와 시간처리하는것 
 //		1) format으로 형식을 디자인(날짜+시간), 신형버젼
-		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd kk:mm:ss");
-		String sDate = sdf1.format(Calendar.getInstance().getTime());
+//		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd kk:mm:ss");
+//		String sDate = sdf1.format(Calendar.getInstance().getTime());
 		
 //		2) 구형버젼
 //		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/mm/dd kk:mm:ss");
@@ -72,10 +72,10 @@ public class JDBC_T1 {
 		Scanner sc = new Scanner(System.in);
 //		Scanner을 사용안하고 다른걸로 사용하는 방법
 //		GUI
-//		int id = Integer.parseInt(JOptionPane.showInputDialog("아이디는?"));
-//		String name = JOptionPane.showInputDialog("이름은?");
-//		String tel = JOptionPane.showInputDialog("전화번호는?");
-//		String ipsail = JOptionPane.showInputDialog("입사일은?");
+		int id = Integer.parseInt(JOptionPane.showInputDialog("아이디는?"));
+		String name = JOptionPane.showInputDialog("이름은?");
+		String tel = JOptionPane.showInputDialog("전화번호는?");
+		String ipsail = JOptionPane.showInputDialog("입사일은?");
 //		int id = Integer.parseInt(JOptionPane.showInputDialog("지울아이디?"));
 //		System.out.println("수정하기 위해 검색할 이름은?");
 //		String ch = sc.next();
@@ -83,22 +83,22 @@ public class JDBC_T1 {
 //		String cid = sc.next();
 		
 		
-//		pst1.setInt(1, id);
-//		pst1.setString(2, name);
-//		pst1.setString(3, tel);
-//		pst1.setString(4, ipsail);
+		pst1.setInt(1, id);
+		pst1.setString(2, name);
+		pst1.setString(3, tel);
+		pst1.setString(4, ipsail);
 //		pst2.setInt(1, id);
 //		pst3.setString(1, cid);
 //		pst3.setString(2, ch);
 //		pst4.setString(1, sDate);
 		
-		//insert, update, delete 세개 다 삽입한 행수가 들어감
+		//insert, update, delete 전부다 Update()를 해줘야함 한번할때마다 값이 1이 올라감
 //		int rowcnt1 = pst1.executeQuery(); //조회
-//		int rowcnt1 = pst1.executeUpdate();
+//		int rowcnt1 = pst1.executeUpdate(); 
 //		int rowcnt1 = pst2.executeUpdate();
 //		int rowcnt1 = pst3.executeUpdate();
 //		int rowcnt1 = pst4.executeUpdate();
-		ResultSet rs2 = pst4.executeQuery();
+//		ResultSet rs2 = pst4.executeQuery();
 		
 //		if(rowcnt1>0) {
 //		System.out.println("잘들어봐~봐 " + rowcnt1 + "행 insert 했다는~~");
@@ -111,11 +111,11 @@ public class JDBC_T1 {
 //			System.out.println("update안됨");
 //		}
 		
-		while(rs2.next()) {
-			int id=rs2.getInt("id");
-			String strD = rs2.getString(4);
-			System.out.println(rs2.getRow()+"\t"+id+"\t"+strD);
-		}
+//		while(rs2.next()) {
+//			int id=rs2.getInt("id");
+//			String strD = rs2.getString(4);
+//			System.out.println(rs2.getRow()+"\t"+id+"\t"+strD);
+//		}
 		
 		con1.close();
 		System.out.println("접속끝");
