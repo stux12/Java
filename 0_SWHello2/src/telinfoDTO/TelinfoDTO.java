@@ -9,9 +9,33 @@ public class TelinfoDTO { // DTO(VO) - DAO(insert,delete,update,select) - DB
 
 	// DTO(VO)
 	private int id; // id number
+	private String id2;
+	private String pw;
 	private String name; // name varchar2
 	private String tel; // tel varchar2
 	private Date d; // d date
+
+	public TelinfoDTO(String id2, String pw, String name) {
+		this.id2 = id2;
+		this.pw = pw;
+		this.name = name;
+	}
+
+	public String getId2() {
+		return id2;
+	}
+
+	public void setId2(String id2) {
+		this.id2 = id2;
+	}
+
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
 
 	// get, set
 	public int getId() {
@@ -48,14 +72,12 @@ public class TelinfoDTO { // DTO(VO) - DAO(insert,delete,update,select) - DB
 
 	// 생성자
 	public TelinfoDTO(int id, String name, String tel, Date d) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.tel = tel;
 		this.d = d;
 	}
 
-	public TelinfoDTO() {
-	}
+	
 
 }
