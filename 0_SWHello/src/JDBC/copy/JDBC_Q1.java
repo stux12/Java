@@ -55,7 +55,7 @@ public class JDBC_Q1 {
 		while (rs2.next()) {// data있어?
 
 
-			String fname = rs2.getString("이름");
+			String fname = rs2.getString("first_name");
 
 			int salary = rs2.getInt("봉급");
 			

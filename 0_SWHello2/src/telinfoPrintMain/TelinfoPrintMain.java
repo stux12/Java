@@ -53,9 +53,8 @@ public class TelinfoPrintMain {
 				
 				for(TelinfoDTO imsi : tiaArray2) {
 					System.out.println(imsi.getId());
-					System.out.println(imsi.getName());
+					System.out.println(imsi.getName	());
 					System.out.println(imsi.getTel());
-					System.out.println(imsi.getD());
 				}
 				break;
 			

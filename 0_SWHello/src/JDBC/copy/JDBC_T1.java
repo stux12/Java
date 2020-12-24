@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 public class JDBC_T1 {
 
-	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException  {
 		
 		// 접속 객체 con1선언
 		Connection con1 = null;
@@ -91,10 +91,10 @@ public class JDBC_T1 {
 //		pst3.setString(1, cid);
 //		pst3.setString(2, ch);
 //		pst4.setString(1, sDate);
-		
+		pst1.executeUpdate(); 
 		//insert, update, delete 전부다 Update()를 해줘야함 한번할때마다 값이 1이 올라감
 //		int rowcnt1 = pst1.executeQuery(); //조회
-//		int rowcnt1 = pst1.executeUpdate(); 
+		int rowcnt1 = pst1.executeUpdate(); 
 //		int rowcnt1 = pst2.executeUpdate();
 //		int rowcnt1 = pst3.executeUpdate();
 //		int rowcnt1 = pst4.executeUpdate();

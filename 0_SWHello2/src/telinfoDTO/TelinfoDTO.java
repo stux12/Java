@@ -13,7 +13,7 @@ public class TelinfoDTO { // DTO(VO) - DAO(insert,delete,update,select) - DB
 	private String pw;
 	private String name; // name varchar2
 	private String tel; // tel varchar2
-	private Date d; // d date
+//	private Date d; // d date
 
 	public TelinfoDTO(String id2, String pw, String name) {
 		this.id2 = id2;
@@ -62,20 +62,24 @@ public class TelinfoDTO { // DTO(VO) - DAO(insert,delete,update,select) - DB
 		this.tel = tel;
 	}
 
-	public Date getD() {
-		return d;
-	}
+//	public Date getD() {
+//		return d;
+//	}
 
-	public void setD(Date d) {
-		this.d = d;
-	}
+//	public void setD(Date d) {
+//		this.d = d;
+//	}
 
 	// 생성자
-	public TelinfoDTO(int id, String name, String tel, Date d) {
+	public TelinfoDTO(int id, String pw, String name, String tel) {
 		this.id = id;
 		this.name = name;
 		this.tel = tel;
-		this.d = d;
+//		this.d = d;
+	}
+
+	public TelinfoDTO(int id3, String name2, String tel2) {
+		// TODO Auto-generated constructor stub
 	}
 
 	

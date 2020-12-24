@@ -35,19 +35,20 @@ public class TelinfoDAO {
 			con.close();
 	}
 
-	public boolean insert_nametel(int id, String name, String tel, String sDate) {
+	public boolean insert_nametel(int id, String pw, String name, String tel) {
 		String sql = "insert into teltable2" + " values (?, ?, ?, ?)";
 
 		try {
 			ps1 = con.prepareStatement(sql);
 			ps1.setInt(1, id);
-			ps1.setString(2, name);
-			ps1.setString(3, tel);
-			int year = Integer.parseInt(sDate.substring(0, 4)) - 1900;
-			int month = Integer.parseInt(sDate.substring(4, 6)) - 1;
-			int day = Integer.parseInt(sDate.substring(6, 8));
-			Date d1 = new Date(year, month, day);
-			ps1.setDate(4, d1);
+			ps1.setString(2, pw);
+			ps1.setString(3, name);
+//			int year = Integer.parseInt(sDate.substring(0, 4)) - 1900;
+//			int month = Integer.parseInt(sDate.substring(4, 6)) - 1;
+//			int day = Integer.parseInt(sDate.substring(6, 8));
+//			Date d1 = new Date(year, month, day);
+//			ps1.setDate(4, d1);
+			ps1.setString(4, tel);
 			ps1.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -69,9 +70,9 @@ public class TelinfoDAO {
 			int id = rs1.getInt("id");
 			String name = rs1.getString("name");
 			String tel = rs1.getString("tel");
-			Date d = rs1.getDate("d");
+//			Date d = rs1.getDate("d");
 
-			TelinfoDTO tiDTO = new TelinfoDTO(id, name, tel, d);
+			TelinfoDTO tiDTO = new TelinfoDTO(id,name, tel);
 			tiarray1.add(tiDTO); // 컬렉션에 객체입력
 		}
 
