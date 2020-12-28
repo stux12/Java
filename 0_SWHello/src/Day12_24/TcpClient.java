@@ -9,8 +9,8 @@ public class TcpClient {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 
-		// connect			//ip address	port
-		Socket s1 = new Socket("127.0.0.1", 7780);
+		// connect //ip address port
+		Socket s1 = new Socket("127.0.0.1", 8899);
 
 		DataInputStream dis1 = new DataInputStream(s1.getInputStream());
 		System.out.println("네 말대로" + dis1.readUTF());
