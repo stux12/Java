@@ -1,4 +1,4 @@
-package Day12_28.Day12_28_5;
+package Day12_28_5;
 
 import java.io.IOException;
 import java.net.Socket;

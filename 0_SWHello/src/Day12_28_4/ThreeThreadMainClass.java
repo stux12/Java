@@ -1,4 +1,4 @@
-package Day12_28.Day12_28_4;
+package Day12_28_4;
 
 class ThreeThreadClass extends Thread {
 	String kwail;

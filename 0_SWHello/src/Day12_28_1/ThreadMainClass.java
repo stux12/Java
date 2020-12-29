@@ -1,4 +1,4 @@
-package Day12_28.Day12_28_1;
+package Day12_28_1;
 
 //Thread를 상속받음 ThreadClass가 됨 Thread는 run()가 무조건 있어야함
 class ThreadClass extends Thread {

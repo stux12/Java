@@ -1,4 +1,4 @@
-package Day12_28.Day12_28_2;
+package Day12_28_2;
 
 class ThreadClass1 extends Thread {
 	@Override
