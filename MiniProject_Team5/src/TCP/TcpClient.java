@@ -34,7 +34,7 @@ public class TcpClient extends JFrame {
 	
 	public TcpClient() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 800);
+		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -43,47 +43,53 @@ public class TcpClient extends JFrame {
 		
 		textField = new JTextField();
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setText("이름을 입력하세요");
-		textField.setBounds(111, 379, 247, 72);
+		textField.setBounds(95, 237, 247, 72);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		Socket s1;
-		try {
-			s1 = new Socket("172.0.0.1", 8899);
-			DataOutputStream outputStream = new DataOutputStream(s1.getOutputStream());
-			DataInputStream inputStream = new DataInputStream(s1.getInputStream());
-			outputStream.writeUTF("##");
-		 
+		
 		
 		JButton button = new JButton("입장하기");
+		button.setBounds(95, 347, 247, 72);
+		contentPane.add(button);
+		try {
+			Socket s1 = new Socket("127.0.0.1", 9000);
+			DataOutputStream outputStream = new DataOutputStream(s1.getOutputStream());
+			DataInputStream inputStream = new DataInputStream(s1.getInputStream());
+			
+		 
+		
+		
 		button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-//				new KajaClientGUI(outputStream, inputStream, 닉네임) {
-//					public void closeWork() throws IOException{
-//						outputStream.close();
-//						inputStream.close();
-//						System.exit(0);
-//				}
-//				}
+				KajaClientGUI gui = new KajaClientGUI(outputStream, inputStream, textField.getText());
+				try {
+					outputStream.writeUTF("##"+textField.getText());
+				} catch (IOException e1) {
+				}
+				gui.setVisible(true);
+				setVisible(false);
 				
 			}
 		});
-		
-		button.setBounds(111, 556, 236, 72);
-		contentPane.add(button);
-		}
+		}// try-end
 		catch (IOException e1) {
+			System.out.println("에러?");
 		}
 		JLabel label = new JLabel("가가오독");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("굴림", Font.PLAIN, 30));
-		label.setBounds(46, 55, 380, 136);
+		label.setBounds(34, 24, 380, 136);
 		contentPane.add(label);
 		
+		JLabel lblNewLabel = new JLabel("이름을 입력하세용~");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(147, 207, 155, 18);
+		contentPane.add(lblNewLabel);
 		
 		
+	
 	}
 }
