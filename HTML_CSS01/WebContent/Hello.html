@@ -1,0 +1,153 @@
+<!DOCTYPE html> <!-- html5로 작성된 것을 의미함 -->
+<!-- doctype : 브라우저가 html의 결과물을 정확히 표현할 수 있도록 도와준다
+	 참고	 : html 4.01 ==> 혹시 문법상 버전이 안맞을지라도 허용
+	 		   xtml 1.0 ==> 문법상 안맞을시 에러가 남  -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+		code{
+			color : #057117;
+		}
+		/*id는 #으로 함*/
+		#a{
+			color : #ffd800;
+		}
+		/*class는 .으로 함*/
+		.b{
+			color : #ffd800;
+		}
+</style>
+
+</head>
+<body> <!-- css가 tag에서 사용될때 -->
+
+	안녕  &nbsp;<!-- 한칸을 띄운다란뜻 --> &nbsp;&nbsp;&nbsp;  HTML <br />
+	<p id = "a"> 아카사타나하마야    아아아아아 </p> <!-- paragraph, 문단단위, 줄바꿈이 한번더 생김 -->
+	<!-- Tag -->
+	<h1 class = "b">Hello World</h1>
+	<p><font color = "red" size=10> 그렇군 한줄 더 생기구만</font> <p/><hr/>
+	
+	
+	그래 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;요???? <br />
+	<!-- &nbsp; &nbsp; 사이에 빈칸은 빈칸으로 인정됨 -->
+	
+	
+	태그 종류<br>
+	<p> 아카사타나하마야    아아아아아 </p> <!-- paragraph, 문단단위, 줄바꿈이 한번더 생김<br>두번쓴개념 -->
+	<b>어느 구름에서 비올지 몰라</b><br> <!-- bold -->
+	<i>어느 구름에서 비올지 몰라</i><br> <!-- italic -->
+	<code>어느<sub>구름에서</sub><sup>비올지</sup>몰라</code> <br><!-- typing 글씨체 -->
+	<code>y=log<sub>10</sub>x<sup>2</sup></code> <br>
+	<h1>제목과 내용을 크기를 다르게</h1>
+	<h2>제목과 내용을 크기를 다르게</h2>
+	<h3>제목과 내용을 크기를 다르게</h3>
+	<h4>제목과 내용을 크기를 다르게</h4>
+	<h5>제목과 내용을 크기를 다르게</h5> <!-- h태그는 5까지 있음 -->
+	<h6>제목과 내용을 크기를 다르게</h6>
+	<p align = "center"> 내가 정기고 처럼 노래를 부르면 <br> <!-- 길이를 정해줌 -->
+	너는 소유 처럼 ..</p>
+	<p align = "right"> 내가 정기고 처럼 노래를 부르면 <br>
+	너는 소유 처럼 ..</p>
+	<p align = "left"> 내가 정기고 처럼 노래를 부르면 <br>
+	너는 소유 처럼 ..</p>
+	<center>
+	삶이 그대를 속일지라도<br>
+	슬퍼하거나 노여워 말라</center>
+	<pre><h1> <!-- pre안에있으면 띄워쓰기 줄바꿈 다됨 -->
+	나정이와	 쓰레기가 나오는것은 응4
+	서인국 응7
+	응8</h1></pre>
+	<marquee direction = "Left"> <h1> substring 했었던거<h1/></marquee> 
+	<marquee behavior = "alternate"><h1>왔다리갔다리</h1> </marquee> 
+	<marquee direction = "right" behavior = "scroll"><h1>디폴트시 스크롤</h1></marquee>
+	<marquee direction = "right" behavior = "slide" ><h1>한번가면 멈춤</h1></marquee>
+	<marquee direction = "right" scrollamount="10000"><h1>속도 빨라짐</h1></marquee> 
+	<marquee direction = "right" scrolldelay="1000"><h1>속도 느려짐</h1></marquee> 
+	<marquee behavior = "scroll" loop = 2> <h2>두번만 지나감<h2/> </marquee>
+	<marquee width="800" height="200" bgcolor="pink" behavior="scroll" scrolldelay="50"><h1>박스만들어서함</h1></marquee><br>
+	<img src =".\1_png\ChatBlack.png" width="200" height="200">
+	<img src =".\1_png\ChatWhite.png" width="200" height="200" style="transform:rotate(90deg);">
+
+	
+	<br>
+	이거는 사용을 잘 안함<br>
+	<strike>응 안써</strike><br> <!-- 취소선 -->
+	<u>응 안써</u><br> <!-- underline -->
+	
+	
+	
+	
+	<!-- markup : 태그를 사용한다  -->
+	
+	<!-- HTML 실행시키는 원리
+		 자바인경우 jdk,jre를 통해 컴파일 후 .class를 만들고 메모리 load하여 실행
+		 HTML의경우 interpreter(브라우저에있음)에 해당함
+		 
+		 
+		 번역기의 종류
+		 	1) compiler(컴파일러) : 미리 번역해서 기계어로 생성한 다음 실행시 기계어만 가동
+		 	2) interpreter(인터프리터) : 미리 번역 x, 실행때마다 번역
+		  -->
+	
+	<!-- html 버전 : 1991년 html 시작으로 ~~~ html 4.0 4.01
+					 2000년 xhtml 1.0 1.1 2.0 (extensible 확장된 html)
+					 2012년 html 4.0에서 확장된 html5 대두
+					 최종버전이 완성됨
+			  참고 : 장애인 차별 금지법..... 300이상 기업에서  -->
+
+	<!-- html5 특징 : 비디오와 오디오 심플하게 지원, css3지원, 위치정보(geolocation), 
+						local depository지원 (jQuery mobile 작성시 이것사용
+						html + css + javascript + dom 을 중심으로 함 (MVC모델S) 
+												  dom은 javasript를 html로 바꿔주는것
+			   참고 : native app(자바로 만든것), web app(내부 web, 겉 자바)  -->
+			   
+	<!-- w3c : HTML표준을 관장하는 w3c(www 컨소시움)
+				(http://www.w3c.org) ==> recommended 표준된
+		
+	web browser : html로 작성된 문서를 웹페이지로 출력하는 역할
+					(5대 브라우저 : IE, Chrome, FF , safari, opera)
+				  					ms  google mozilla 
+				  cross browsing
+				  언어 : 영어, 한글, 중국어, 일본어...
+				  브라우저 : 5대 브라우저가 다 돌수 있도록 맞춰야함 
+				  (참고)IoT : 파이, 아두이노 <embedded (ARM borad)>
+				  						pc -> cross compile -> embedded -->		
+				  						
+	<!-- 웹
+		 (브라우저)			(Tomcat)		(web application server)
+		 web client ------- web Server ------- WAS
+		 클라이언트가 요청하지 않으면 응답도 안한다 
+		 (그래서 만들어진것이 websocket)
+		 
+		 web server : apache
+		 was		: tomcat  -->
+		 
+	
+	<!-- 톰캣 다운로드 및 압축풀기
+		 8.5버전으로 다운로드  
+		 톰캣 사용 문제점 해결
+		 	1) 처음 작성은 Dynamic Web...
+		 	   중간에 톰캣설정폴더는 톰캣의 bin방이 보이는 위치 까지
+		 	   
+		 	2) server문제발생시 새로 추가
+		 		(필요시 서버 삭제는
+		 		 윈도우 - preferences-server-runtime...에서 삭제
+		 		 or 서버 탭에서 그냥 삭제)
+		 이때 서버탭에서 바로 지웠다면 다시 설정시 configur... 눌러 잡혀있는 톰캣을 remove 한다음
+		 서버 설정후 바로 프로젝트명 - 마오 - build path - configure..project facets - runtime탭에서 - 톰캣 체크한후 - apply  -->
+
+	<!-- 실행후 마오 - 소스보기(보안)
+				마오 - 검사(크롬에서 소스에러 찾을때)
+				우상단부분에 액박이 보임, 그걸 클릭하면 우측아래 에러내용 나옴 -->
+				
+	<!-- 반응형 웹 : responsive web / 정적 웹 : static web
+		 bootstrap 
+		 https://tworab.tistory.com/71  -->
+	
+
+	
+</body>
+</html>
