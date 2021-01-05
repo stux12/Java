@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script>
+	/* 이안에 있는것은 모두 자바스크립트~*/
+	
+		//객체.속성=값 --> 객체.이벤트=이벤트처리함수
+		//하얀영역  마우스움직  수행한다 {}안을
+		document.onmousemove=function(){
+								//그림좌표(100,50) = 마우스좌표(100,50)
+			//DOM(Document Object Model)					
+			document.getElementById("f1").style.left=event.clientX+"px" //px입력해야 px좌표로 인식된다 꼭해줘야함!!
+			document.getElementById("f1").style.top=event.clientY+"px"
+			//document.all.f1.style.top=event.clientY+"px";
+			//이건 IE스타일 IE : document.all.f1 ==> DOM(Document Object Model)
+			//DOM이 없을땐 태그를 찾아갈 방법이 없었음
+		}
+	
+	</script>
+
+</head>
+<body>
+	<!-- 마우스의 위치는 x,y축으로 찾아냄 -->
+	<!-- position:absolute => 위치가 맨왼쪽 맨위 0,0을 기준으로 한다-->
+	<span id="f1" style="position:absolute;"><!-- 속성명:값; -->
+		<img src="1_png\dacs.jpg" border="0" name="krim" width="100px" height="100px" />
+	</span>
+	
+</body>
+</html>
+<!-- window.screen.width     window.screen.height -->
