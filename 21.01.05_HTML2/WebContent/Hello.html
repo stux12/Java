@@ -1,0 +1,108 @@
+<!DOCTYPE html> <!-- html5로 작성된 것을 의미함 -->
+<!-- doctype : 브라우저가 html의 결과물을 정확히 표현할 수 있도록 도와준다
+	 참고	 : html 4.01 ==> 혹시 문법상 버전이 안맞을지라도 허용
+	 		   xtml 1.0 ==> 문법상 안맞을시 에러가 남  -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+		code{
+			color : #057117;
+		}
+		/*id는 #으로 함*/
+		#a{
+			color : #ffd800;
+		}
+		/*class는 .으로 함*/
+		.b{
+			color : #ffd800;
+		}
+</style>
+
+</head>
+<body> <!-- css가 tag에서 사용될때 -->
+
+	안녕  &nbsp;<!-- 한칸을 띄운다란뜻 --> &nbsp;&nbsp;&nbsp;  HTML <br />
+	<p id = "a"> 아카사타나하마야    아아아아아 </p> <!-- paragraph, 문단단위, 줄바꿈이 한번더 생김 -->
+	<!-- Tag -->
+	<h1 class = "b">Hello World</h1>
+	<p><font color = "red" size=10> 그렇군 한줄 더 생기구만</font> <p/><hr/>
+	
+	
+	그래 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;요???? <br />
+	<!-- &nbsp; &nbsp; 사이에 빈칸은 빈칸으로 인정됨 -->
+	
+
+	<!-- markup : 태그를 사용한다  -->
+	
+	<!-- HTML 실행시키는 원리
+		 자바인경우 jdk,jre를 통해 컴파일 후 .class를 만들고 메모리 load하여 실행
+		 HTML의경우 interpreter(브라우저에있음)에 해당함
+		 
+		 
+		 번역기의 종류
+		 	1) compiler(컴파일러) : 미리 번역해서 기계어로 생성한 다음 실행시 기계어만 가동
+		 	2) interpreter(인터프리터) : 미리 번역 x, 실행때마다 번역
+		  -->
+	
+	<!-- html 버전 : 1991년 html 시작으로 ~~~ html 4.0 4.01
+					 2000년 xhtml 1.0 1.1 2.0 (extensible 확장된 html)
+					 2012년 html 4.0에서 확장된 html5 대두
+					 최종버전이 완성됨
+			  참고 : 장애인 차별 금지법..... 300이상 기업에서  -->
+
+	<!-- html5 특징 : 비디오와 오디오 심플하게 지원, css3지원, 위치정보(geolocation), 
+						local depository지원 (jQuery mobile 작성시 이것사용
+						html + css + javascript + dom 을 중심으로 함 (MVC모델S) 
+												  dom은 javasript를 html로 바꿔주는것
+			   참고 : native app(자바로 만든것), web app(내부 web, 겉 자바)  -->
+			   
+	<!-- w3c : HTML표준을 관장하는 w3c(www 컨소시움)
+				(http://www.w3c.org) ==> recommended 표준된
+		
+	web browser : html로 작성된 문서를 웹페이지로 출력하는 역할
+					(5대 브라우저 : IE, Chrome, FF , safari, opera)
+				  					ms  google mozilla 
+				  cross browsing
+				  언어 : 영어, 한글, 중국어, 일본어...
+				  브라우저 : 5대 브라우저가 다 돌수 있도록 맞춰야함 
+				  (참고)IoT : 파이, 아두이노 <embedded (ARM borad)>
+				  						pc -> cross compile -> embedded -->		
+				  						
+	<!-- 웹
+		 (브라우저)			(Tomcat)		(web application server)
+		 web client ------- web Server ------- WAS
+		 클라이언트가 요청하지 않으면 응답도 안한다 
+		 (그래서 만들어진것이 websocket)
+		 
+		 web server : apache
+		 was		: tomcat  -->
+		 
+	
+	<!-- 톰캣 다운로드 및 압축풀기
+		 8.5버전으로 다운로드  
+		 톰캣 사용 문제점 해결
+		 	1) 처음 작성은 Dynamic Web...
+		 	   중간에 톰캣설정폴더는 톰캣의 bin방이 보이는 위치 까지
+		 	   
+		 	2) server문제발생시 새로 추가
+		 		(필요시 서버 삭제는
+		 		 윈도우 - preferences-server-runtime...에서 삭제
+		 		 or 서버 탭에서 그냥 삭제)
+		 이때 서버탭에서 바로 지웠다면 다시 설정시 configur... 눌러 잡혀있는 톰캣을 remove 한다음
+		 서버 설정후 바로 프로젝트명 - 마오 - build path - configure..project facets - runtime탭에서 - 톰캣 체크한후 - apply  -->
+
+	<!-- 실행후 마오 - 소스보기(보안)
+				마오 - 검사(크롬에서 소스에러 찾을때)
+				우상단부분에 액박이 보임, 그걸 클릭하면 우측아래 에러내용 나옴 -->
+				
+	<!-- 반응형 웹 : responsive web / 정적 웹 : static web
+		 bootstrap 
+		 https://tworab.tistory.com/71  -->
+	
+
+	
+</body>
+</html>

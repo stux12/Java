@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 서버로 갈때는
+		
+		http ==> hypertext transfer protocol
+		
+		<form action = "hello1.jsp" method = "get">
+		서버에 있는 hello1.jsp를 찾아감 기본이 get방식
+		
+		action : 서버의 누구 찾아가??? .jsp servlet(웹자바)(.java)
+		method : 전송방식(get(기본) , post)
+		
+		get : head, body로 처리 그중 head : 이름, 전화번호가 노출됨, 작은용량 길이가고정
+		post : body처리 : 노출안됨, 큰용량, 길이는 당연히 유동, 속도가 상대적 down
+		
+		 -->
+	
+	<!-- get방식으로 #으로 이동함 -->
+	<form action="./hello1.jsp" method="get">
+		이름 <input type="text" name="irum" autofocus required placeholder="kildong hong"/> <br />
+		아이디 <input type="text" name="id" required/> <br />
+		비밀번호 <input type="password" name="pw" required/> <br />
+		전화번호 <input type="text" name="tel" /> <br />
+		이메일 <input type="email" name="email2"  required placeholder="aa@aa.com"/> <br />
+		사진 <input type="file" name="pic" required/> <br />
+		날짜 <input type="date" name="nalja" />
+	<!-- 
+	required는 해당 칸이 비어있을시 꼭 입력하라고 알림
+	placeholder는 예시느낌으로 적힘
+	autofocus는 자동으로 해당하는곳에 포커싱됨
+	
+	 -->	
+		
+		<!-- submit을하면 확인  action -->
+		<input type="submit" value="확인">
+		<input type="reset" value="취소"/>-
+	</form>
+	
+	
+	<!-- 구분
+		compiler       vs interpreter
+		
+		client side    vs server side
+		
+		개발자가개발   		개발자가개발
+	실행시 클라이언트감  	안감
+	클라이언트 제어하실행 	서버제어하실행
+장점: 서버의 overhead X      보안문제해결(클라이언트는 소스X)
+		     (과부하) 
+단점: 보안적측면			서버의 overhead
+  
+  예: html,javascript,css...    jsp,servlet...	-->
+
+	
+	
+	
+</body>
+</html>
