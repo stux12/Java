@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+	h2{
+		float: left;
+		margin-right: 20px;
+		font-size: 50px;
+	}
+	
+	.id0{
+		color: red;
+	}
+	
+	.id1{
+		color: orange;
+	}
+	
+	.id2{
+		color: yellow;
+	}
+	.id3{
+		color: green;
+	}
+	.id4{
+		color: blue;
+	}
+	.id5{
+		color: purple;
+	}
+
+</style>
+
+</head>
+<body>
+	
+	<script>
+		document.write("<h1>로또 10게임을 위해 새로고침!!</h1>")
+		var num = new Array();
+		for (var i = 0; i < 6; i++) {
+			num[i] = Math.ceil(Math.random() * 45) //1~45숫자 랜덤
+			for (var j = 0; j < i; j++) {
+				if (num[i] == num[j]) { //중복제거
+					i--
+				}
+			}
+		}
+		num.sort(function(a,b){
+			return a-b
+		})
+		
+		for(var i=0; i<6; i++){
+			document.write("<h2 class='id"+i+"'>"+num[i]+"    </h2>")
+		}
+	</script>
+</body>
+</html>

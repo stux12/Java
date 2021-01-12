@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		var num = window.prompt("점수를입력하세요", "여기에");
+		document.write("점수가",num,"이군요.<br />",);
+		var go = window.confirm("계산하시겠어요?");
+		if(go==true){
+		if (num == null) {
+			window.alert("취소했어영");
+		} else {
+			num = Math.floor(num / 10);
+			switch (num) {
+			case 10:
+			case 9:
+			case 8:
+			case 7:
+			case 6:
+				document.write("a학점입니다");
+				break;
+			case 5:
+			case 4:
+			case 3:
+				document.write("b학점입니다");
+				break;
+			case 2:
+			case 1:
+				document.write("c학점입니다");
+				break;
+			case 0:
+				document.write("0점쓰~");
+			default:
+				document.write("점수가 아닙니다.");
+				break;
+			}
+		}
+		}else{
+			document.write("취소");
+		}
+	</script>
+
+</body>
+</html>
