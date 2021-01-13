@@ -6,11 +6,11 @@
 
 	<script>
 		function kaja(){
-			alert(document.getElementById("aa").innerText);//처리할 범위표현
-			alert(document.getElementById("aa").innerHTML);
-			alert(document.getElementById("aa").outerText);
-			alert(document.getElementById("aa").outerHTML);
-			alert(document.getElementById("aa").textContent);//innerText, 디자인X
+		//	alert(document.getElementById("aa").innerText);//처리할 범위표현
+			alert(document.getElementById("aa").innerHTML); //id제외 코드
+		//	alert(document.getElementById("aa").outerText);
+			alert(document.getElementById("aa").outerHTML); //id포함 코드
+		//	alert(document.getElementById("aa").textContent);//innerText, 디자인X
 		} //IE4종류 w3c HTML표준 2종류만 채택, chrome은 ALL
 		// 단, text처리를 위해서 textContent를 사용하면된다
 	</script>
@@ -27,7 +27,7 @@
 	
 	<table id="aa">
 		<tr>
-			<th>love</th>
+			<th>love</th><!-- 표의제목을 쓰는 역할 <th> -->
 		</tr>
 		<tr>
 			<td><h1 onclick="kaja();">I Love you</h1></td>

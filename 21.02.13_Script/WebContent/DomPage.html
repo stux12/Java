@@ -15,6 +15,7 @@
 			alert("이~~뻐")
 		}
 		function kajaCancel(){
+			//if(값이)null이 아닐경우 로직수행됨
 			if(event.stopPropagation){
 				//stopPropagation을 사용가능해, 표준형
 				event.stopPropagation(); //FF, Chrome
@@ -22,7 +23,7 @@
 				event.cancelBubble = true; //IE7, 8
 			}
 		}
-		// event객체라는게 있음 얘는 뭐하는녀석?
+		// event객체라는게 있음 on~ ,submit..등등 이벤트가일어나는 모든것들
 	</script>
 
 </head>
