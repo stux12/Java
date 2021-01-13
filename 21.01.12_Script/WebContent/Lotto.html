@@ -12,26 +12,7 @@
 		font-size: 50px;
 	}
 	
-	.id0{
-		color: red;
-	}
 	
-	.id1{
-		color: orange;
-	}
-	
-	.id2{
-		color: yellow;
-	}
-	.id3{
-		color: green;
-	}
-	.id4{
-		color: blue;
-	}
-	.id5{
-		color: purple;
-	}
 
 </style>
 
@@ -40,7 +21,7 @@
 	
 	<script>
 		document.write("<h1>로또 10게임을 위해 새로고침!!</h1>")
-		var num = new Array();
+		var num = []
 		for (var i = 0; i < 6; i++) {
 			num[i] = Math.ceil(Math.random() * 45) //1~45숫자 랜덤
 			for (var j = 0; j < i; j++) {
@@ -54,8 +35,15 @@
 		})
 		
 		for(var i=0; i<6; i++){
-			document.write("<h2 class='id"+i+"'>"+num[i]+"    </h2>")
+			var r = Math.floor(Math.random()*256)
+			var g = Math.floor(Math.random()*256)
+			var b = Math.floor(Math.random()*256)
+			var rgb = r+","+g+","+b
+			document.write("<h2 class='id"+i+"' style=color:rgb("+rgb+")>"+num[i]+"    </h2>")
 		}
 	</script>
+	
+	
+	
 </body>
 </html>
