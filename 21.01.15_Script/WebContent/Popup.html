@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script src = jquery-3.5.1.js></script>
+
+<script>
+
+	$(document).ready(function(){
+		kaja(); //메소드(함수)호출문
+		
+	})
+	
+	function kaja() { //정의문
+		window.open("popupWin.html", "Pop", "width=370,height=300,top=20,left=350,location=no,menubar=1")
+																	//location no해도 주소표시줄보임 보안때매
+		/* window.open()메소드
+		(인자1, 인자2, 인자3)
+		인자1 = 팝업창url
+		인자2 = alias(별명)으로 사용가능
+		인자3 = 옵션 */
+	}
+
+</script>
+
+<body style="background-color: cyan;">
+	<h3>popup창열자</h3>
+	<pre>
+		<h2>
+			나는 메인창 
+			<!-- window.open 새창여는것 -->
+			팝업창이 열린데
+			팝업창이 열렸어?
+			팝업창이 열렸네
+		</h2>
+	</pre>
+</body>
+</html>
