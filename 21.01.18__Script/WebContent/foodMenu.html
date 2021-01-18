@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script src="jquery-3.5.1.js"></script>
+
+
+
+<body>
+
+
+	<h1>식사메뉴</h1>
+	<div class="f1">
+		<p>식사 메뉴</p>
+		<ol class="s1" id="s1">
+			<li>백반</li>
+			<li>돈까스</li>
+			<li>햄버거</li>
+		</ol>
+		<p>후식메뉴</p>
+		<ul id="h1">
+			<li>커피</li>
+			<li>차</li>
+			<li>과일</li>
+		</ul>
+	</div>
+	
+	<!-- 바디밑에 적어야지만 인식됨 -->
+	<script>
+	//id이용
+	alert($("#s1 li:eq(1)").text());
+	
+	//ol태그 이용
+	alert($("ol li:eq(1)").text());
+	
+	//class이용
+	alert($(".s1 li:eq(1)").text());
+	
+	//body이용
+	alert($("body div li:eq(1)").text());
+	
+	//li가 몇개있나 확인 총개수가 나옴
+	alert($("li").length); //6개
+	
+	alert($("li,p,ol").length); //9개
+	
+	$(".s1").css("color","blue"); //css()메소드 = style
+	</script>
+	
+</body>
+</html>

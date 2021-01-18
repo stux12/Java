@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src=jquery-3.5.1.js></script>
+
+	<style>
+		
+		table, tr, td{
+			border: 2px solid gray;	
+			
+		}
+	</style>
+
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>홍길동</td>
+			<td>24</td>
+		</tr>
+		<tr>
+			<td>이도령</td>
+			<td>26</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>32</td>
+		</tr>
+		<tr>
+			<td>이도령</td>
+			<td>24</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>이도령</td>
+			<td>24</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>34</td>
+		</tr>
+		<tr>
+			<td>이도령</td>
+			<td>42</td>
+		</tr>
+	</table>
+	
+	<script>
+		//0,3,6
+		$("tr:nth-child(3n)").css("background","green");	
+		//1,4,7
+		$("tr:nth-child(3n+1)").css("background","blue");	
+		//2,5,8
+		$("tr:nth-child(3n+2)").css("background","red");	
+	
+	</script>
+
+</body>
+</html>

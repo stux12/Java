@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: 11_HTML
-Bundle-SymbolicName: 21.01.11_HTML
-Bundle-Version: 1.0.0.qualifier

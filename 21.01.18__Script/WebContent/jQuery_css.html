@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<style>
+	
+		h1 {
+			color: orange;
+		}
+		h3{
+			color: purple;
+		}
+		#saek{
+			color: green;
+		}
+		.kongjoo{
+			color: red;
+			font: bold;
+		}
+		.aa{
+			color: blue;
+			font: bold;
+		}
+	</style>
+
+</head>
+<body>
+
+	<script src="jquery-3.5.1.js"></script>
+	
+		<h1 id="hana">나 오렌지</h1>
+		<h1>두개</h1>
+		<h3>나도</h3>
+		<h2 id="saek">색 넣어봐</h2>
+		<div class="kongjoo">겨울왕국 공주</div>
+		<div class="aa">미스에이 아니죠 그냥 aa</div>
+		
+		<script>
+			$("h1").css("color","orange")
+			$("h3").css("color","purple")
+			$("#saek").css("color","green")
+			$(".kongjoo").css("color","red").css("font","bold").css("font-size","30px")
+			$(".aa").css("color","blue").css("font","bold").css("font-size","30px")
+		</script>
+</body>
+</html>

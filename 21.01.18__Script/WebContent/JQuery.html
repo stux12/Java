@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src = jquery-3.5.1.js></script>
+
+<script>
+		//onload가 먼저찍히고 후 ready는 다찍힘
+		$(document).ready(function() {
+			 alert("바보");
+		}); 
+		$(function(){
+			alert("바보");
+		})
+		$(function(){
+			alert("온달");
+		})
+		
+		//window.onload는 두개가있으면 마지막에 선언한거만 찍힘
+		window.onload = function () {
+			alert("그냥 공주");
+		};
+		window.onload = function () {
+			alert("평강공주");
+		};
+		
+	</script>
+
+	
+	<script>
+	
+		// filter 해당범위 자신레벨
+		// find 전체범위 자기자신+하위레벨
+	
+		$(function() {
+			//아래의 $("#id이름")는 document.getElementById("id이름")이랑 같은것
+			$("div").filter("#div1").text("바보 온달의 러브라인...");
+			//div 태그안에서 div1 id를 찾아 그내용을 변경
+			//                      innertext하고 같은것 (무조건 문자형태로)
+		
+			$("div").filter("#li3").text("평강공주");
+			$("div").find("#li4").html("<h3>바보온달</h3>") ;
+								//html해야 태그로 인식됨 innerHTML
+		
+			$("div").find("#li5").text("결혼한다네~");
+			$("#div2").find("#li3").text("평강").end().find("#li4").text("공주");
+											//chaining
+			// div2에서 child가 li3 id인것을찾아 그내용을 변경한 후 다시 앞으로 가서 li4 id를 찾아 내용변경
+			
+			
+			// 자기자신에서만 찾기때문에 안나옴
+			$("div").filter("#li3").text("뭐야");
+			alert($("div").filter("#li3").text());
+		})
+		
+	
+
+	</script>
+	
+	
+
+</head>
+<body>
+
+	<!-- 
+	JQuery - client-side
+			 javascript framework
+			 자바스크립트 긴 문장을 줄여서 쓰자
+			 
+			 design pattern : 이렇게 해보니깐 쉽고 정확하게 진행되더라
+			 그러면 이것들을 취합해서 이론적으로 정립해보기
+			 
+	(참고) jQuery Mobile
+	-- web app(hybrid app)
+	어플 만들때 안드로이도 studio - 자바 ==> native app
+	
+	 -->
+
+	
+	
+	<h1>jQuery</h1>
+
+
+
+	<div id="div1"></div>
+	<div id="div2">
+		<ul>
+			<li id="li3">바보</li>
+			<li id="li4">온달</li>
+			<ul>
+				<li id="li5">가자</li>
+			</ul>
+		</ul>
+	</div>
+	
+</body>
+</html>

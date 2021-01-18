@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="jquery-3.5.1.js"></script>
+<body>
+
+
+
+	<h1 align="left">
+	align align align</h1>
+	<h1 align="left">
+	change align align align</h1>
+	<h1 align="left">
+	click해보던가</h1>
+	<script>
+	
+		$(function(){
+			alert($("h1:first").attr("align")); //get
+			$("h1:eq(1)").click(function(aaa){
+				$(this).attr("align","right"); //set
+				//css의경우 css style만
+				//attr의경우 속성을 처리
+			})
+		})
+		$("h1:eq(2)").click(function(bada){
+			$("h1:first").toggle();
+		})
+		
+			
+		
+	</script>
+
+</body>
+</html>
