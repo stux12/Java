@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<style>
+		/* inline inline-block block */
+		.disstyle1 ul li{
+			display: inline;
+			/* inline*/
+			/* width,height X //// margin,padding O */
+		}
+	
+	
+		.disstyle2 ul li{
+			display: inline-block;
+			padding: 100px;
+			margin: 100px;
+			width: 130px;
+			height: 130px;
+			background-color: pink;
+			/* inline-block은 inline처럼 배치 */
+			/* width, height O //// margin,padding O */
+			1
+		}
+	
+		.disstyle3 ul li{
+			display: block;
+			width: 130px;
+			height: 130px;
+			padding: 10px;
+			margin: 10px;
+			background-color: cyan;
+		}
+	</style>
+
+
+</head>
+<body>
+
+	<div class="disstyle1">
+		<ul>
+			<li><a href="#">내가그린기린그림</a></li>
+			<li><a href="#">기른그림</a></li>
+		</ul>
+	</div>
+	
+	
+	<div class="disstyle2">
+		<ul>
+			<li><a href="#">네가그린그림기린</a></li>
+			<li><a href="#">기린그림</a></li>
+		</ul>
+	</div>
+	
+	<div class="disstyle3"> <!-- 이것은 display:block -->
+		<ul>
+			<li><a href="#">네가그린그림기린</a></li>
+			<li><a href="#">기린그림</a></li>
+		</ul>
+	</div>
+	
+	<div style="display: none;"> <!-- 만들어놓고 안보이게함 -->
+		<ul>
+			<li><a href="#">네가그린그림기린</a></li>
+			<li><a href="#">기린그림</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>

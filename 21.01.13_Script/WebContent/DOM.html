@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html id="htmlid1">
+<head id="headid1">
+<meta charset="UTF-8">
+<title>DOM</title>
+
+	<script>
+		// html head등으로 접근
+		function kaja() {
+				//ie only 	//all비표준 //ie7~8 : tagName = 표준형 nodeName
+			alert("1st"+document.all.htmlid1.nodeName)
+				//all태그 접근+id이름을 가진 객체를 얻어 + 태그 name출력
+			alert("2nd"+document.getElementById("htmlid1").nodeName) //표준형
+			
+			var headid1 = document.getElementById("headid1") //접근+객체를 get함
+			
+			var str1 = headid1.nodeName //태그 name문자열
+			alert("3rd"+str1)
+	
+		}
+		
+		//동적변경
+		function kaja2() { //객체.속성(src)=값(이미지이름)
+			document.getElementById("krimid1").src="./JPG/dog.jpg";
+			
+			var bodyid1=document.getElementById("bodyid1");
+			bodyid1.style.backgroundColor="Yellow";
+			//css속성을 javascript로 사용시 일반적인 방법은 background-color ==> background, -빼고, color첫글자 대문자
+			
+			document.getElementById("bodyid1").style.color="green";
+			document.getElementById("bodyid1").style.fontSize="70px";
+										//font-size -> fontSize
+		}
+		
+	</script>
+
+</head>
+<body id="bodyid1">
+	DOM이라는
+	<input type="button" value="눌러봐DOM접근쓰~" onclick="kaja();"/><br />
+	<img src="./JPG/dog.jpg" width="100px" height="100px" id="krimid1"/>
+	<input type="button" value="눌러봐DOM동적쓰~" onclick="kaja2();" />
+</body>
+</html>

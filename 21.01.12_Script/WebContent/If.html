@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 
+	회원번호 2자리를 입력받아 60 이상이 입력되면 "실버반으로 가세요"
+	라는 메시지창 출력, 20이상이면 골드반, 다른 나이이면 푸른반으로 가세요를 출력하는 자바스크립트 프로그램을 작성
+	hint) 키보드입력 : window.prompt()가 있음
+	 -->
+	 
+	 <script>
+	 /* type of() = 타입을 알려줌 */
+	 	var num = window.prompt("회원번호 2자리를 입력하세요", "여기에 입력");
+	 	if(num>=60){
+	 		document.write("실버반으로 가세요")
+	 	}
+	 	else if(num>=20){
+	 		document.write("골드반으로 가세요")
+	 	}
+	 	else{
+	 		document.write("푸른반으로 가세요")
+	 	}
+	 </script>
+	 
+
+</body>
+</html>

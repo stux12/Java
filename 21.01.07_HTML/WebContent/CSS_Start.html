@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+	<!-- 3. 스타일을 외부파일에서 선언 -->
+	<!-- <link rel="stylesheet" href="jeoki.css" /> -->
+	
+	<!-- 2. css스타일을 따로 선언 -->
+	<style>
+		h1{
+			color:red;
+			text-align:center;
+			text-decoration:underline;
+		}
+		
+		/*overline(윗줄), line-through(취소선)*/
+		p{
+			color: blue; font-size: 30pt;
+		}
+		.redred{
+			color: red;
+		}
+		#myid {				
+			color:green;	font: bold 20pt Serif,Sans-serif;}
+										/*  글씨체 없으면 뒤에걸로  */
+		}
+		
+		
+	</style>
+	
+</head>
+<body>
+
+	<!-- css = cascading style sheet
+		
+			주석 = /* */사용
+			<style>태그 사용
+		
+			웹페이지 디자인
+				presentation logic vs business login(개발시 분업가능)
+				
+				[사용법]
+				1.html에 넣어서 사용 ex) <h2 style=...>제목</h2>
+				2.태그사용 ex) <style> </style>
+				3.외부파일을 만들어놓고 호출해서 사용
+						<link rel="stylesheet"... href="aa.css" />
+							rel=relation
+				[코딩하기]
+				selector(선택자) {속성:값; 속성:값;}
+				 -->
+				
+	 <div class="redred">class는 .</div>
+	 
+	 <div id="myid">id는 #</div>
+	 
+	 <h1>태그사용</h1>
+	 <!-- 1.html안에 넣어서 사용 -->
+	 <h3 style="color: violet;"></h3>
+	 <p>태그또썼지롱</p>
+	 <font color="brown"> html로 디자인 </font>
+	 
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script>
+	//onunload는 popup창을 닫았다는의미
+	window.onunload=function(){
+		kajaCookie();
+	}
+	
+	function kajaCookie() {
+		//javascript는 기본적으로 계층구조이므로
+		//태그에 name을주면 그 name을 . 으로해서 들어갈수있음
+		if(document.f1.chk1.checked == true){
+			//오늘 부터 1일후 날짜 계산
+			var oneul1 = new Date()
+			oneul1.setDate(oneul1.getDate()+1)
+			
+			//checkbox를 check했으면 쿠키를 만들어서 1일동안 창이 안열리게
+			document.cookie = "annaeCookie=kongji1; expires = oneul1.toUTCString()"
+				//document.cookie="쿠키이름=쿠키값 유효기간          toUTCString - 세계협정시 우리나라+9(9시간빠름)
+		}// check가 안되어있으면 쿠키안만들고 끝
+	}
+
+</script>
+
+<body style = "background-color: aqua;">
+
+	<h3>오늘의 이벤또</h3>
+	<pre>
+		오늘 5시까지 아메리카노를 주문하시면
+		집에보내드려요^^
+	</pre><hr />
+	
+	<form name="f1">
+		<input type="checkbox" name="chk1"/>
+		지금부터 하루동안 이 창문 띄우지 않습니다
+	</form>
+
+	<!-- <div onclick="self.close()">닫기</div>를 안쓴 이유는
+		크롬에서는 닫기기는 하지만 이벤트 unload연결이 안됨 -->
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+	<!-- 지도 참고 https://apis.map.kakao.com/web/guide/ -->
+
+	<!--"dapi.kakao.com/v2/maps/sdk.js?appkey=여기 잡스키값  -->
+
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5ec3a49dab097727a19eb3ebbec159bf">
+	
+	</script>
+	
+	<script>
+		window.onload = function () {
+										//위도경도
+			var joongang1 = new daum.maps.LatLng(37.6111104 ,126.90063359999999)
+		
+			//해당 위도,경도를 지도의 중앙으로 위치하기 위한것
+			//JSON기법
+		var mapDesign1 = {
+				zoom : 15,
+				center : joongang1,		
+				//mapTypeId : daum.maps.MapTypeId.ROADMAP
+				mapTypeId : daum.maps.MapTypeId.HYBRID
+		};
+		//지도그리자
+		var map = new daum.maps.Map(document.getElementById("jido1"), mapDesign1);
+		}
+	</script>
+
+
+<body>
+
+	<div id="jido1" style="width: 700px; height: 700px;">
+	여기에 지도 나옴</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+	<script>
+	 <!-- 내 위치 찾는방법 -->
+	window.onload=function(){
+		
+		if(navigator.geolocation){
+		//navigator : 브라우저에 대한 정보등을 알아내는
+		//geolocation : 유무선망에 연결된 휴대 전화, 컴퓨터 등 기기의 지리적 위치 정보
+		//getCurrentPosition : 현재 위도와 경도를 알아내는 메소드(변수)
+			navigator.geolocation.getCurrentPosition(kajaWichi1) //현재위치 
+												//kajaWich1을 호출 이벤트 처리 함수는 () 없이 바로 사용
+		}
+	}
+	
+	function kajaWichi1(wichi1) {
+		//coords : 위치객체
+		//latitude : 위도
+		//longitude : 경도
+		var wido = wichi1.coords.latitude
+		var kyungdo1 = wichi1.coords.longitude
+		alert("위도는"+wido+"경도는"+kyungdo1)
+	}
+	
+	</script>
+
+<body>
+
+
+	<!-- 
+	 ###카카오맵키 발급설명은 여기
+	 http://apis.map.daum.net/web/guide
+	 
+	 ###발급 순서
+	 https://developers.kakao.com가서 회원가입 로그인
+	 내app - app만들기 - 진행
+	 아이콘 상관없이 이름넣고 - 앱만들기로 키발급받음
+	 발급된 자바스크립트 키 확인 (자바스크립트 키가 app키)
+	 설정 - 일반 - 플랫폼 추가버튼 클릭
+	 웹선택 도메인은 http://localhost:8081
+	 url 2개 등록도가능 - 추가(꼭해야함)
+	 
+	 내 잡스키 : 7ef597add30ff69cf52fda8c14e594a3
+	 -->
+	 
+	
+	<h1> 나의 위치 </h1>
+	<h3>위도 경도 몇일까요</h3>
+	<h3>잘나오네~</h3>
+</body>
+</html>

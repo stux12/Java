@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- cookie 스토리 
+	
+	작은파일, 광고
+	클라이언트 접속을 하면 쿠키를 생성 - 클라이언트로 전송 - 저장도 클라이언트
+	
+	<스크립트 쿠키 구조>
+	document.cookie="쿠키이름=쿠키값; 유효기간; 도메인; path; secure"
+	document.cookie="aa=bb; expires=''; domain=''; path=''; secure"
+	
+	name = value ; 
+	expires = 
+	path : 생성한 페이지에서만 cookie read이면 www.aa.com 이하의 모든페이지에서 read가능
+	secure : https로 안전한전송
+	
+	-->
+
+	<script>
+		window.onload = function () {kaja();}
+		function kaja() {				//쿠키명=쿠키값
+			if(document.cookie.indexOf("annaeCookie=kongji1")==-1){
+				window.open("CookieWin1.html", "Cookie", "width=370, height=300, top=20, left=350, location=no")
+			}
+			alert("쿠키한번 보자"+document.cookie); //쿠키에 있는것 모두확인
+		}
+		
+		//cross browsing 
+		//현재 브라우저안에 크롬이란것이 들어있는지
+		//indexOf는 이런글자가 포함되어있는지
+		//값이 없으면 -1을 반환함
+		//if(navigator.userAgent.indexOf("Chrome") != -1)
+			
+			
+	/*
+			### 개발자가 만든 .html 띄워 http://localhost에서 쿠키찾기
+		크롬 - 마오 - 검사 - 상단 삼선메뉴 - application - Storage - cookie
+	*/
+
+	</script>
+	
+	<h3>popup창열장</h3>
+	<pre>
+		여기는 본문이 있는곳으로
+		본문이다
+	</pre>
+
+</body>
+</html>
