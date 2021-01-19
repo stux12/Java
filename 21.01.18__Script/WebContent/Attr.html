@@ -26,7 +26,8 @@
 			})
 		})
 		$("h1:eq(2)").click(function(bada){
-			$("h1:first").toggle();
+			$("h1:first").toggle('slow');//slow대신 숫자도가능 1000 = 1초
+			$("h1:nth-child(1)").css("color","red");
 		})
 		
 			

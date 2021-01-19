@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script src="jquery-3.5.1.js"></script>
+
+<body>
+
+	<h1>식사메뉴</h1>
+	<div class="f1">
+		<p>식사 메뉴</p>
+		<ol class="s1" id="s1">
+			<li>백반</li>
+			<li>돈까스</li>
+			<li>햄버거</li>
+		</ol>
+		<p>후식메뉴</p>
+		<ul id="h1">
+			<li>커피</li>
+			<li>차</li>
+			<li>과일</li>
+		</ul>
+	</div>
+
+	<script>
+	
+		//지금하는것들 xml에 연관됨 ajax할때도!!
+		//커피 차 과일 전부 출력 트리구조형태 표준형임
+//		alert($("#h1").children().text());
+//		alert($("#h1").children().length); //자녀수
+		
+		//자식들간의 관계 sibling
+//		alert($("#h1 li").siblings().text());
+		
+		// 실행상으로 둘이다름 append는 추가한 text를 출력 contents는 내용을 출력
+//		alert($("#h1").contents().text());
+//		alert($("#h1").append().text());
+		
+		//첫번째 자녀 커피를 출력하시오
+//		alert($("#h1").children(":first").text());
+		
+		//커피다음 자녀를 출력하시오
+//		alert($("#h1").children(":eq(1)").text());
+//		alert($("#h1 li:eq(0)").next().text());
+		
+		//커피다음 자녀 다나와봐
+//		alert($("#h1 li:eq(0)").nextAll().text());
+		
+		//부모에있는 내용이 다나옴
+//		alert($("#h1 li:eq(0)").parent().text());
+		
+		//1호(차) 앞 커피를 나오게 하시오
+//		alert($("#h1 li:eq(1)").prev().text());
+		
+//		alert($("#h1 li:eq(2)").prevAll().text());
+	
+		/* xml 구조 not HTML!!
+		<book>
+			<author>홍길동</author>
+			<title>허균전</title>
+		</book>*/
+		
+		//ul 자녀 li형제 노드가(siblings) 몇명인지 세어보기
+//		alert($("#h1 li").siblings().length);
+		
+		$("#h1 li:eq(0)").siblings().css("background","pink");
+		$("#h1 li:eq(1)").siblings().css("background","yellow");
+	</script>
+
+</body>
+</html>
