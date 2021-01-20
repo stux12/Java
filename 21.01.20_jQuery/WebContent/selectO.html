@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	
+
+<script src="jquery-3.5.1.js"></script>
+
+	<div id="first">
+		<h1>먹고싶은 과일 선택하기</h1>
+	</div>
+	<div id="second">
+		<select name="" id="select_box">
+			<option value="사과">사과</option>
+			<option value="멜론">멜론</option>
+			<option value="오렌지" selected>오렌지</option>
+			<option value="바나나">바나나</option>
+		</select>
+	</div>
+		
+	
+	<script>
+		$(function() {
+
+			$("#first").mouseenter(function() {
+				$("#first").hide();
+				$("#second").slideDown('slow')}).mouseleave(function(){});
+			
+			$("#second").mouseenter(function(){}).mouseleave(function(){
+				$("#first").show();
+				$("#second").slideUp('slow');
+			})
+		})
+	</script>
+	
+</body>
+</html>

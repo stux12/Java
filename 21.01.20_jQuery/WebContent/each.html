@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+	/* div{
+		color: blue;
+	} */
+	/* 색상 확인 주소 http://colorchart.ltool.net/index-in-korean.php?type=link */
+	.dd0{color: aqua;}
+	.dd1{background: black;}
+	.dd2{background: blue;}
+	.dd3{background: fuchsia;}
+	.dd4{background: gray scroll bottom;}
+	.dd5{color : blue;}
+	.dd6{background: green;}
+	.dd7{background: lime;}
+	.dd8{background: maroon;}
+</style>
+
+</head>
+<body>
+
+	<script src="jquery-3.5.1.js"></script>
+
+	<h1>맛집메뉴</h1>
+	<div id="d1">
+		<ul id="ul2" class="ul2">
+			<li id="1"><b>불백</b></li>
+			<li id="2">파스타</li>
+			<li id="3">피자</li>
+		</ul>
+	</div>
+	
+	<div id="d2">
+		<ul class="ul3">
+			<li id="11">김치전</li>
+			<li id="22">파전</li>
+			<li id="33">녹두전</li>
+		</ul>
+	</div>
+	
+	<div id="d3">
+		<ul class="u123">
+			<li id="100">회덮밥</li>
+			<li id="200">냉면</li>
+			<li id="300">왕만두</li>
+		</ul>
+	</div>
+
+	
+	<script>
+	
+		//each자체가 반복문이라고 보면됨 인자1(증가), 인자2
+		$("li").each(function(index, item) {
+			//$(this).css("color","blue")
+			$(this).addClass("dd"+index);
+		})
+	
+	</script>
+
+
+</body>
+</html>

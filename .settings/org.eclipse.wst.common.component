@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SW">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/0_JH_Test/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/0_SWHello/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/0_SWHello2/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/1_JavaHelloWorld/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/2_Servlet_HelloWorld/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/9_Team5_Project/src"/>
+        <property name="context-root" value="SW"/>
+        <property name="java-output-path" value="/SW/bin"/>
+    </wb-module>
+</project-modules>

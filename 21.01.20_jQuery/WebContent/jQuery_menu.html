@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="jquery-3.5.1.js"></script>
+<body>
+
+	<!-- 
+	jQuery로 toggle 메뉴 만들려면
+	$.each, 배열이 필요
+	이벤트중에서 click, toggle: hidden?->show hide
+	 -->
+	<div id="title1">
+		<h4>영화관으로</h4>
+	</div>
+	<div id="stitle1" style="display: none;">
+		<ul>
+			<li><a href="#">영화제목은</a><br /></li>
+			<li><a href="#">상영관안내</a></li>
+		</ul>
+	</div>
+	
+	<div id="title2">
+		<h4>식당</h4>
+	</div>
+	<div id="stitle2" style="display: none;">
+		<ul>
+			<li><a href="#" >음식메뉴는</a><br /></li>
+			<li><a href="#" >맛집안내</a></li>
+		</ul>
+	</div>
+
+	<div id="title3">
+		<h4>후식</h4>
+	</div>
+	<div id="stitle3" style="display: none;">
+		<ul>
+			<li><a href="#" >커피메뉴는</a><br /></li>
+			<li><a href="#" >차메뉴는</a></li>
+		</ul>
+	</div>
+
+	<div id="title4">
+		<h4>주차</h4>
+	</div>
+	<div id="stitle4" style="display: none;">
+		<ul>
+			<li><a href="#" >주차장약도는</a><br /></li>
+			<li><a href="#" >주차요금안내</a></li>
+		</ul>
+		
+	</div>
+
+	<script>
+		$(function(){
+			var arr =[1,2,3,4]
+		
+		$.each(arr,function(index, item){
+			$('#title'+item).click(function() {
+				if($('#stitle'+item).is(':hidden')){
+					$('#stitle'+item).show();
+				}else{
+					$('#stitle'+item).hide();
+				}
+			})
+		})
+		});
+		
+	
+	</script>
+
+</body>
+</html>

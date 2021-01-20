@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="jquery-3.5.1.js"></script>
+
+<script>
+	$(function(){
+		var urlArray1=[
+			{key : '네이버~~', value:'http://www.naver.com/'},
+			{key : '구글~~', value:'http://www.google.com/'}
+		];
+		
+		$.each(urlArray1, function(key1,kab1){
+			var str1="";
+			str1 += '<a href="'+kab1.value+'">'+'<h1>'+kab1.key+'</h1></a>'+'<br>';
+			document.body.innerHTML += str1; 
+		});
+	});
+	//메뉴 2개를 화면에 출력하는 작업이 필요함
+	
+</script>
+<body>
+
+	<!-- 
+	일반적으로 마우스를 대면 손가락이 나오고 누르면 해당 페이지로 이동
+	==> <a href=...>
+	메뉴가 10개일때 jquery로 한다면
+	==> $.each()를 사용할예정 Array배열과 연관
+	var soo = [1,2,3,4];
+	{key:aa , value:bb}; -->
+
+</body>
+</html>

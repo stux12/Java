@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="jquery-3.5.1.js"></script>
+<body>
+	
+	<div id="img">
+	<img src="image/coffee.jpg" alt="" id="coffee1" />
+	<img src="image/milk.jpg" alt="" id="milk1"/>
+	<img src="image/pizza.jpg" alt="" id="pizza1"/>
+	</div>
+
+	<!-- 
+	setTimeout(인자1, 인자2) : 인자2후에 인자1을 수행 한번만
+	setInterval(인자1, 인자2) : 인자2후에 인자1을 수행 계속 반복수행
+	 -->
+	
+	<script>
+	
+	$(function () {
+		$("img").css("width",100).css("height",100);
+		var image = "<img src='image/coffee.jpg' id='coffee1' width=100px height=100px />"
+		setInterval(function () {
+			//$("img").first().appendTo("body"); 아래와 같음
+			//$("body").append($("img").first());
+		//	$("body").append(image);
+			$("<img>").attr("src","image/coffee.jpg").css("width",100).css("height",100).attr("id","coffee1").appendTo("body");
+			$("#img").children(":first").remove();
+		}, 2000);
+		});
+	
+	</script>
+	
+</body>
+</html>

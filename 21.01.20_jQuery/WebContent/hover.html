@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="jquery-3.5.1.js"></script>
+<body>
+	<h1>잇이츠 hover</h1>
+	<h2>??</h2>
+	<h3>또잉</h3>
+	<script>
+		$(function() { //hover(인자1 ,인자2) hover했을때 인자1 안했을때 인자2
+			$("h1").hover(function() {
+				$(this).css("background","yellow");
+			},function(){
+				$(this).css("background","pink");
+			})
+			//$("h2").hover(function(){
+			//})
+			$("h2").mouseover(function(){
+				$(this).css("color","blue");
+			})
+			$("h3").click(function(){
+				$(this).remove();
+			})
+		})
+	</script>
+</body>
+</html>
