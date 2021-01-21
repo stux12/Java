@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script src="jquery.js"></script>
+<script src="jquery.autocomplete.js"></script>
+
+<script>
+	var loveline = ["babo", "ondal", "kongjoo", "sinderella", "choonhyang", "leedoryung",
+		"바보","온달","공주","신데렐라","춘향","이도령",
+		"바다","온도","축구공","신발","향단이","도자기"];
+</script>
+
+<script>
+	//자바 스크립트로 출력하면
+	for(var i=0; i<loveline.length; i++){
+		document.write(loveline[i]+"\t");
+	}
+	document.write("\n")
+	
+</script>
+
+<script>
+	//jQuery를 사용하면 제시어 로직이 간단해진다 3.5.1을쓸시엔 이기능을 못씀 옛날껄로 써야함
+	$(function() {
+		//$("#lovelinename").autocomplete(loveline); //이거는 맨앞글자만 검색해서 자동완성나옴
+		$("#lovelinename").autocomplete(loveline,{ matchContains: true });// 다나오게됨 false가 기본값 
+	});
+	
+	
+	
+</script>
+
+
+	<form >
+	러브라인 이름:
+	<input type="text" name="lline" id="lovelinename" />
+	</form>
+	
+</body>
+</html>

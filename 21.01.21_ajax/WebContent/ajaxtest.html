@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script src=jquery-3.5.1.js></script>
+
+<script>
+	//javascript -> jquery, ajax ->jqueryAjax
+	
+	
+	//xhr선언 여기에 XHR객체를 담기위해
+	var xhr = null; 
+
+	
+	//xhr함수(통신객체 생성하기)
+	function getXHR() { 
+		try {
+				//현재 브라우저에서 사용가능한지 물어봄
+			if (window.XMLHttpRequest) {//표준형//ie11,ff,ch
+				return new XMLHttpRequest//xhr통신객체 생성
+			} else if (window.ActiveXObject) {//old IE일경우 explore브라우저 옛날버전
+				return new ActiveXObject("MSXML2.XMLHTTP");
+			} else {
+				return new ActiveXObject("Microsoft.XMLHTTP")
+			}
+		} catch (e) {
+			xhr1 = null;
+		}
+	}
+	
+	
+	//서버로 가는 함수
+	function kajaServer(url) { 
+		
+		//input에서 value를 가져오는 방법
+		//1)jquery
+		var name = $("#name").val();
+		var age = $("#age").val();
+		//2)javascript
+//		var name = document.form1.name.value;
+//		var age = document.form1.age.value;
+		
+		
+		//값을 보내는 방법
+		//1) 배열에 값을 넣고 보내서 분해한다
+		var values = [name,age];
+		//2) 선언한 값을 바로 연결해서 보내기
+		//name age를 &으로 연결해서 보냄
+		//3) 하나의 변수에 다 연결해서 보내기 encoding을 해줘야 특이사항에서도 한글이 안깨져서 선호!!
+		serverURL = url+"?name="+encodeURIComponent(name)+"&age="+age;
+		
+		xhr1 = getXHR();//new XHR xhr객체생성
+		
+		//onreadystatechange속성은 = 값의 메소드가 실행됨 ()를 쓰면안됨
+		xhr1.onreadystatechange = callback1;
+		//프론트엔드 초보개발자가 3~4시간 해매는곳 많이어려움!!
+		//파스칼 OnReadyStateChange, 케멀 onReadyStateChange 이 아닌 전부 소문자로 적어야함
+		
+		
+		// get방식으로 .jsp에 보냄 post방식도있음 true비동기 false동기방식(하는의미없음)
+		//1) xhr1.open("get","kajaParam.jsp?values="+values,true);
+		//2) xhr1.open("get","kajaParam.jsp?name="+name+"&age="+age);
+		//3)
+		xhr1.open("get",serverURL,true);
+		
+		//값을 보내는곳임 get방식일때는 직접 코드가 보여서 가져올수있으므로 null, post방식이면 값을써줘야함 
+		xhr1.send(null);
+		
+	}
+	
+	
+	
+	
+	function callback1(){
+		var ta = document.getElementById("ta");
+		switch(xhr1.readyState){//현재상태가 뭐야?
+		//ready참고 https://m.blog.naver.com/PostView.nhn?blogId=shdlsdo&logNo=220590134013&proxyReferer=https:%2F%2Fwww.google.com%2F
+		/*
+		case 0:
+			ta.value += "객체생성\n"; break;
+		case 1:
+			ta.value += "send메서드사용전\n"; break;
+		case 2:
+			ta.value += "send메서드 호출\n"; break;
+		case 3:
+			ta.value += "아직 결과 다안옴\n"; break;
+		*/
+		case 4://4번만쓰면됨 나머지는 주석으로 해놓고 사용 단, 4번만썼다고 되는게 아닌 에러체크를 해야함!!! 꼭!!
+			//ta.value += "결과 다왔다고 전해라\n"; 
+			
+			//에러체크 status 200은 정상 나머지는 에러
+			if(xhr1.status==200){
+				//ta.value += "정상으로 옴\n";
+				
+				//jsp로 부터 보낸 값을 받는곳
+				//xml text은 jsp(server)에서 넘겨주는값을 보고 결정
+				ta.value += xhr1.responseText+"\n" //responseXML
+						
+				/*
+				참고 : xml구조 <food><irum>사과<price>2500</price></irum></food>
+				       xml은 구조적, 체계적이므로 전송데이터로 사용, 환경설정
+					   단, xml은 html형식으로 변환됨*/
+			}else{
+				ta.value += "에러발생\n";
+				ta.value += xhr1.status+"\t"+xhr1.statusText+"\n";
+							//404 				not found
+			}
+			break;
+		
+		}
+	}
+	
+	function kajaClear() {
+		var ta = document.getElementById("ta");
+		ta.value="";
+		document.form1.name.value="";
+		document.form1.age.value="";
+	}
+	
+</script>
+
+<body>
+
+	<body>
+	<h3>소설스</h3>
+	<hr />
+	<textarea name="" id="ta" cols="100" rows="20"></textarea>
+	<br />
+	<form name=form1>
+		<input type="text" value="이름입력" id="name" name="name"/>
+		<input type="text" value="나이입력" id="age" name="age"/>
+		<input type="button" value="소설볼래?" onclick="kajaServer('kajaParam.jsp')"/>
+	</form>
+</body>
+</html>
