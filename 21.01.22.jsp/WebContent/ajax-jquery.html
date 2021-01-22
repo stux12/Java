@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="jquery-3.5.1.js"></script>
+
+<script>
+
+	function kaja() {
+		$.ajax({ //$.ajax() --이둘을 합친게 $.get $.post
+			/* url : "hello.jsp"*/ //open(method,url,true/false)
+			url:"kaja.jsp",
+			//json기법 사용 속성: 값
+			data: { 
+				//hello.jsp?irum=hong&na2=35 ==<input type=text name=irum/>
+				irum:"hong",
+				na2:35
+			},
+			//responseText, responseXML
+			dataType:"text",
+			//open방법 get? fost?
+			type:"get",
+							//이인자를 통해서 값이 넘어옴 0~4
+			success: function(result1) {
+				alert("응답받는 다는"+result1);
+			},				//에러는 인자가 두개넘어옴 404 에러내용 이런식으로
+			error: function(xhr1, status) {
+				alert("에러상태 : "+"\t"+xhr1.status);
+			}
+			
+		})
+	}
+
+</script>
+
+<body>
+	
+	<h2>ajax-jquery</h2>
+	
+	<input type="button" value="가자서버로"  onclick="kaja()"/>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<script src="jquery-3.5.1.js"></script>
+<script>
+
+	$(function () {
+		$.ajax({
+			url: "xml_jsp.jsp",
+			type: "get",
+			
+			success: function(data1) {
+				$(data1).find("menu").each(function() {
+					var t1 = $(this).find("title").text()
+					var p1 = $(this).find("price").text()
+					var s1 = $(this).find("result").text()
+					$("<h3></h3>").text(t1+"\t"+p1+"\t"+s1).appendTo("#result")
+					
+				})
+			},
+			error: function(xhr1,status) {
+				alert(xhr1.status);
+			}
+		
+		})
+	})
+	
+</script>
+
+
+</head>
+
+
+<body>
+
+	<h3>ajax kaja(reponseXML)</h3>
+	그러니까 이번에는 xml을 받아서 출력을 해보자 <br />
+	<!-- xml은 2가지 확장자 .jsp .xml 이 있다.
+	 -->
+	<div id="result"></div>
+	
+	
+</body>
+</html>

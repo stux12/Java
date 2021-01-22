@@ -18,8 +18,8 @@
     
 //    int idx = values.indexOf(",");
 //    String name = values.substring(0,idx);
-//    String age = values.substring(idx+1);%>
-    
+//    String age = values.substring(idx+1);
+    %>
     <%-- expression 결과를 찍기위해 사용하는곳 --%>
     그리고 당신의 이름은 <%= name %> 이군요
     나이는<%= age %> 이군요
