@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>로그인</h1>
+	<!--  action은 submit할시 일어남 
+	method는 get방식(head로 전송, 전송내역 다보임, 기본형), 
+			 post방식(body로 전송, 보안성이 높음, 길이를 계산해줘야함)이있음
+			 
+	참고) get방식 한글깨질때 톰캣 - server.xml 안 63번라인쯤 <Connector URIEncoding="UTF-8"넣어줌
+								connectionTimeout="20000" port="8181" 앞에
+		  post방식 한글깨질때 문장으로 자체 처리가능 -->
+	<form action="kajalogin.jsp" method="post">
+											<!-- not null -->
+		아이디 <input type="text" name="id1" required/> <br />
+		암호 <input type="password" name="pw1" required/> <br />
+		나이 <input type="text" name="age1" required /> <br />
+		<input type="submit" value="가자 서버로" />
+		<input type="reset" value="취소" />
+	</form>
+
+</body>
+</html>
