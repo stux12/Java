@@ -17,7 +17,6 @@
 		인자를 가지고 가는것 getRequestDispatcher()
 		-->
 	<% response.sendRedirect("kaja1.jsp"); %>
-	<% %>
 	로그인하고 왔어 - 안했어 - 다시 로그인 화면으로 보내자
 </body>
 </html>

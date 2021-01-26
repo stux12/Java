@@ -7,5 +7,10 @@
       
     }
   },
-  "ecmaVersion": 5
+  "ecmaVersion": 5,
+  "ide": {
+    "scriptPaths": [
+      
+    ]
+  }
 }
