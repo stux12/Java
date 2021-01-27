@@ -39,7 +39,7 @@
 		<tr>
 			<td width="30%" height="100px"><jsp:include page="ActionLeft.jsp"/></td>
 			<td width="70%" height="100px"><h4 align="center"><jsp:include page="ActionRight.jsp"/></h4></td>
-		</tr>p
+		</tr>
 		<tr>
 			<td colspan="2" width="100%" height="100px"><jsp:include page="ActionFooter.jsp"/></td>
 		</tr>

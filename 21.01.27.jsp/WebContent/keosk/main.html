@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		table, tr, td{
+			border: 1px solid;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h2>주문입력</h2>
+	<hr />
+	
+	<form action="sub.jsp" method="get">
+		<table>
+			<tr>
+				<td colspan="2">음료자판기</td>
+			</tr>
+			<tr>
+				<td>금액을 넣어주세요</td>
+				<!-- number로 받으면 문자입력을 못함 이걸로하면 형변환 할필요 없음-->
+				<td><input type="number" name="soo"/></td>
+			</tr>
+			<tr>
+				<td colspan="2">커피를 선택하세요</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="checkbox" name="cafe" value="solt" />흑당커피(2700원) 
+					<input type="checkbox" name="cafe" value="late" />카페라테(1700원)<br>
+					<input type="checkbox" name="cafe" value="moca" />카페모카(2000원) 
+					<input type="checkbox" name="cafe" value="ame" />아메리카노(900원)<br>
+					<input type="checkbox" name="cafe" value="ess"/>에스프레소(3000원)
+					<input type="checkbox" name="cafe" value="cafu"/>카푸치노(2000원)<br>
+					<input type="checkbox" name="cafe2" value="cafu,2000"/>카푸치노(2000원)
+					<input type="checkbox" name="cafe2" value="ess,3000"/>에스프레소(3000원)
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="주문입니다."/><input type="reset" value="재입력"/></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
