@@ -1,6 +1,7 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="telinfoVO.TelInfoVO"%>
 <%@page import="telinfoDAO.TelInfoDAO"%>
-<%@page import="java.util.ArrayList"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
 </head>
 <body>
 	<h1>사원 전체 명단</h1>
-	<%
+	<% 
 		request.setCharacterEncoding("UTF-8"); 
 		TelInfoDAO tidao = new TelInfoDAO();
 		//전체 출력을 위해서 DAO 준비
