@@ -11,7 +11,7 @@
 	request.setCharacterEncoding("UTF-8"); 
 	response.setCharacterEncoding("UTF-8"); 
 	
-
+	
 	String name = request.getParameter("name");
 	int jumsu = Integer.parseInt(request.getParameter("jumsu"));
 	int jumsu2 = Integer.parseInt(request.getParameter("jumsu2"));
