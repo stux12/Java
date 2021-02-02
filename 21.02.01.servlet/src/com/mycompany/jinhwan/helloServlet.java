@@ -53,7 +53,7 @@ public class helloServlet extends HttpServlet {
 		out.println("<h1>방가방가 Hello Servlet 이라는 </h1>");
 		System.out.println("모야");
 		
-		//앞에 주소창에 앞에 localhost안뜸 프로젝트 경로명이나옴
+		//앞에 주소창에 앞에 localhost안뜸 프로젝트명만나옴
 		response.getWriter().println(request.getContextPath());
 		//프로젝트명/파일경로가 나옴
 		response.getWriter().println(request.getRequestURI());
