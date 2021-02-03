@@ -13,7 +13,7 @@ public class ExecuteGetOneInfo implements ExecuteImpl {
 
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		
+		 
 		String name = request.getParameter("name");
 
 		TelInfoDAO tidao1 = new TelInfoDAO();

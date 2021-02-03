@@ -10,4 +10,4 @@
 	${result1}<br>
 	<a href="getAllInfo.do">전체보기</a>
 </body>
-</html>
+</html> 

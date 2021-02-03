@@ -14,7 +14,7 @@ out.println("여기는 자바스타일로 출력"+irum+","+na2+"<br>");
 <jsp:useBean id="sawon2" class="sawonpkg.Sawon"></jsp:useBean>
 <!-- Spring에서는 <bean id="" class=""/>형태로 사용함 -->
 
-
+ 
 <!-- 자바에서 setter로 넘어오는 irum 및 na2를 받아보자
 	sawon1.setIrum(request.getParameter("irum"))
 	sawon1.setNa2(request.getParameter("na2")) 

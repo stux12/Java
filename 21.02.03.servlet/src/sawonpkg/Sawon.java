@@ -18,5 +18,5 @@ public class Sawon {
 		this.na2 = na2;
 	}
 	
-	
+	 
 }

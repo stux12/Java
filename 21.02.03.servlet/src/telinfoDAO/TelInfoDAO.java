@@ -15,7 +15,7 @@ public class TelInfoDAO {
 	private Connection con;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	
+	 
 	public TelInfoDAO() throws ClassNotFoundException, SQLException{
 		con= new TelInfoDBConn().getConnection();
 	}

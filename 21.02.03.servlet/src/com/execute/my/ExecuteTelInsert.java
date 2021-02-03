@@ -14,7 +14,7 @@ public class ExecuteTelInsert implements ExecuteImpl {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		
+		 
 		TelInfoDAO tidao1 = new TelInfoDAO();
 		ArrayList<TelInfoVO> alist1 = tidao1.getAllInfo();
 		request.setAttribute("alist1", alist1);

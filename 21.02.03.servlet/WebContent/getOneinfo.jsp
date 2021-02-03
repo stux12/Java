@@ -17,7 +17,7 @@
 				<th>전화번호</th>
 				<th>입사일</th>
 			</tr>
-			<tr>
+			<tr> 
 				<td><input type="text" value="${tv1.id}" name="id" /></td>
 				<td><input type="text" value="${tv1.name}" name="name" /></td>
 				<td><input type="text" value="${tv1.tel}" name="tel" /></td>

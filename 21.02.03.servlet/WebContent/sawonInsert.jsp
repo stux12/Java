@@ -15,7 +15,7 @@
 			<tr>
 				<td>이름 : <input type="text" name="name1" /></td>
 			</tr>
-			<tr>
+			<tr> 
 				<td>전화번호 : <input type="text" name="tel1" /></td>
 			</tr>
 			<tr>

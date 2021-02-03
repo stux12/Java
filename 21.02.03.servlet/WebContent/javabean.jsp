@@ -14,7 +14,7 @@
 	
 	Spring - 빈객체 ... empty가 아닌 bean객체이다
 	자바,웹 - bin... 빈방이 아닌 실행파일(.class등)이 있다.
-			 
+			  
 	jsp useBean -- 가독성 html + 자바 ==> html화(태그형식으로 사용)
 	이것처럼 action tag : jsp-forward jsp-include
 	즉 객체 만드는 new형태까지도 태그형식으로 기술하는것

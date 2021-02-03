@@ -12,7 +12,7 @@ public class ExecuteTelDelete implements ExecuteImpl {
 		
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		
+		 
 		
 		String name = request.getParameter("name");
 

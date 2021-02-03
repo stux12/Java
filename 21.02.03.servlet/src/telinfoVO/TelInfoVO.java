@@ -14,7 +14,7 @@ public class TelInfoVO {
 		this.name = name;
 		this.tel = tel;
 		this.d = d;
-	}
+	} 
 	public int getId() {
 		return id;
 	}

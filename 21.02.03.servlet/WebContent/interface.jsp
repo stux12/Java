@@ -10,7 +10,7 @@
 	 <!-- 
 	 controller에서 로직이 너무 길어지는것을 처리하기위해서 service를 이용함
 	 servlet에서는 kaja()대신 보통 execute()를 사용함
-	 
+	  
 	 주의할점!!!
 	 interface를 사용해서 한다
 	 - 다중상속을 할수있다
