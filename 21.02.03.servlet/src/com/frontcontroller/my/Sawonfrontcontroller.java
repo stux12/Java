@@ -10,6 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.execute.my.ExecuteGetAllInfo;
+import com.execute.my.ExecuteGetOneInfo;
+import com.execute.my.ExecuteImpl;
+import com.execute.my.ExecuteTelDelete;
+import com.execute.my.ExecuteTelInsert;
+import com.execute.my.ExecuteTelUpdate;
+
 import telinfoDAO.TelInfoDAO;
 import telinfoVO.TelInfoVO;
 
@@ -47,35 +54,25 @@ public class Sawonfrontcontroller extends HttpServlet {
     	System.out.println(request.getServletPath());
     	System.out.println(c); //위방법보다는 정확한방법으로 사용하기
     	
-    	// 각종 전역함수 선언
-    	String str = null; // 어느페이지로 갈지 결정
-    	TelInfoDAO tidao1= null; //DAO객체사용 
-    	ArrayList<TelInfoVO> alist1 = null; //데이터베이스 정보를 담기위해
-    	TelInfoVO tv1 = null; // 정보를 담는 그릇
-    	int id = 0; //id담을변수
-    	String name = null; //이름담을변수
-    	String tel = null; //전화번호담을변수
-    	String d = null; //date담을변수
-    	boolean tf = false; //update delete insert 되었는지 확인하기 위해
+    	String str = null;
+    	ExecuteImpl h1 = null; //Implements : 인터페이스로부터 상속받을때
+    	//상속 A extends B		A implements B
+    	//			(B는 클래스)		(B는 인터페이스)
+    	
     	
     	// 들어온 정보가 어떤건지 판별하기 위해
     	switch (c) {
     	// 전체검색
 		case "/getAllInfo.do": 
 				
+			//원래는 h1 = new HaevaImpl(); 이런형식이 기본
+			h1 = new ExecuteGetAllInfo();//클래스개념 상속받은 자식임!! 부모것으로 자식을 가르키는것
 			try {
-				tidao1 = new TelInfoDAO();
+				h1.execute(request, response); //child에 있는 자식메소드임
+				//이경우 execute가 2개인데 자식쪽을 찾아감!!
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
-		
-			try {
-				alist1 = tidao1.getAllInfo();
-			}catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			request.setAttribute("alist1", alist1);
 			str = "getAllinfo.jsp";
 			
 			break;
@@ -84,82 +81,51 @@ public class Sawonfrontcontroller extends HttpServlet {
 		//하나검색
 		case "/telSearchone.do" : 
 			
-			name = request.getParameter("name");
+			h1 = new ExecuteGetOneInfo();
 			try {
-				tidao1 = new TelInfoDAO();
-				tv1 = tidao1.getInfo(name);
+				h1.execute(request, response);
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
-			
-			request.setAttribute("tv1", tv1);
-			
+						
 			str = "getOneinfo.jsp";
 			break;
 		
 		// 정보입력
 		case "/Telinsert.do" :
-			id = Integer.parseInt(request.getParameter("id1"));
-			name = request.getParameter("name1");
-			tel = request.getParameter("tel1");
-			d = request.getParameter("d1");
+			
+			h1 = new ExecuteTelInsert();
+			try {
+				h1.execute(request, response);
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
 			
 			str = "result.jsp";
-			try {
-				tidao1 = new TelInfoDAO();
-				tf = tidao1.insertInfo(id, name, tel, d);
-				if(tf) {
-					request.setAttribute("result1", "insert성공");
-				}else {
-					request.setAttribute("result1", "insert실패");
-				}
-			}catch (Exception e) {
-				e.printStackTrace();
-			}
 			break;
 			
+		// 정보삭제
 		case "/TelDelete.do" :
-			name = request.getParameter("name");
-						
+			h1 = new ExecuteTelDelete();
 			try {
-				tidao1 = new TelInfoDAO();
-				tf = tidao1.deleteInfo(name);
+				h1.execute(request, response);
 			}catch (Exception e) {
 				e.printStackTrace();
-			}
-				
-			if(tf) {
-				request.setAttribute("result1", "삭제good");
-			}else {
-				request.setAttribute("result1", "삭제오류");
 			}
 			str = "result.jsp";
 			break;
 		
-			
+		// 정보 업데이트
 		case "/Telupdate.do" :
-			id = Integer.parseInt(request.getParameter("id"));
-			name = request.getParameter("name");
-			tel = request.getParameter("tel");
-			d = request.getParameter("d");
 			
-			String name4 = request.getParameter("name2");
-			
-			//업데이트 처리
+			h1 = new ExecuteTelUpdate();
 			try {
-				tidao1 = new TelInfoDAO();
-				
-				tf = tidao1.update_nametel(id, name, tel, d, name4);
-				//업데이트 성공여부
-				if(tf) {
-					request.setAttribute("result1", "update성공");
-				}else {
-					request.setAttribute("result1", "update실패");
-				}
-				str = "result.jsp";
+				h1.execute(request, response);
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
+		
+			str = "result.jsp";
 			break;
 		
 		
