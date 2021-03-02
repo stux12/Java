@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- 생성자를 가지고 setter 하는방법 -->
+	<bean id="insaCon1" class="com.study.insa.InsaCon">	
+		<constructor-arg name="name" value="홍길동"></constructor-arg>
+	</bean>
+	
+	<bean id="insaCon2" class="com.study.insa.InsaCon" c:name="홍길동">
+	</bean>
+	
+	<bean id="insaCon3" class="com.study.insa.InsaConClass" c:insaCon-ref="insaCon2">
+	</bean>
+	
+	<!-- bean을 생략하는방법 -->
+	<!-- 
+		이것은 bean등록과 관계없이 bean을 스캔하여 annotation을 활성화 함
+		bean스캔 범위는 insapkg, @component와 짝이되어서 수행 
+	-->
+	<context:component-scan base-package="com.study.insa"></context:component-scan>
+	<context:component-scan base-package="com.study.client"></context:component-scan>
+
+	
+	<!-- bean객체를 기본으로 선언하고 쓰고싶으면 -->
+	<!-- 
+		@Autowired를 사용해야함!!
+		Autowired는 <property>나 <construct-arg>역할로
+		자동으로 같은 이름의 bean을 찾아 injection
+		그러므로 setter, 생성자 선언이 필요없어짐 
+	-->
+	
+	<!-- 
+		단, <context:annotationc-config/>는
+		이미 등록되어 있는!! bean에 대해서만 annotation을 활성화
+		따라서 bean객체 선언을 꼭 해줘야함 
+	-->
+			
+	<!-- 
+		저쪽에서 @Autowired도 추가
+		참조변수와 mapping 및 bean객체가 명시적으로 필요할때는
+		<context:annotation-config/>와 @Autowried를 연동하여 사용
+		(단, @Autowried는 해당 type bean객체가 없거나 여러개 있으면 에러!!) 
+	-->
+	<context:annotation-config></context:annotation-config>
+	<bean id="insaBean" class="com.study.insa.Insa"></bean>
+	<bean id="conBean" class="com.study.constarg.Constarg"></bean>
+	<!-- 이런식으로 여러개 있으면 에러남 아니면 아애 없거나!! 
+	bean id="insaBean2" class="com.study.insa.Insa" 
+	근데 이걸 에러가 안나게 해결하는 방법이 있음!!
+	-->
+	<bean id="insaBean2" class="com.study.insa.Insa">
+		<!-- 이 insaBean2를 쓰고싶으면 koobeok을 이용해서 사용하면 됨 -->
+		<qualifier value="koobeok"></qualifier>
+	</bean>
+	
+	<!-- qualifier가 아닌 이름으로 선택하기 @Resorse이용 -->
+	<bean id="insaBean3" class="com.study.insa.Insa"></bean>
+	<bean id="insaBean4" class="com.study.insa.Insa"></bean>
+	
+</beans>

@@ -3,6 +3,7 @@ package configurationbean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.study.client.AljaHobby;
 import com.study.client.Client;
 import com.study.insa.Insa;
 
@@ -28,6 +29,10 @@ public class ConfigurationBean {
 	@Bean
 	public Client clientBean() {
 		return new Client(130,"이미래","축구");
+	}
+	@Bean
+	public AljaHobby aljaBean() {
+		return new AljaHobby(clientBean());
 	}
 	
 }

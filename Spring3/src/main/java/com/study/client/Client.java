@@ -18,7 +18,7 @@ public class Client {
 	public void Who() {
 		System.out.println("사원의 id는 "+id+",사원이름은 "+name+" 이라는~~");
 	}
-	public String Hobby(){
-		return "나의 취미는 "+hobby+"이야~~"; 
+	public void Hobby(){
+		System.out.println("나의 취미는 "+hobby+"이야~~");  
 	}
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xmlns = NAMESPACE -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Scope차이 -->
+	<bean id="bankbean1" class="com.study.bangka.Bangka1"
+		scope="singleton"></bean>
+	<!-- singleton은 defalut이기 때문에 생략가능 -->
+	<bean id="bankbean2" class="com.study.bangka.Bangka2"
+		scope="prototype"></bean>
+	<bean id="bankbean3" class="com.study.bangka.Bangka1"
+		scope="singleton"></bean>
+	<bean id="Lotto" class="com.study.bangka.Lotto"></bean>
+	<bean id="client1" class="com.study.client.client"
+		scope="singleton"></bean>
+	<bean id="client2" class="com.study.client.client"
+		scope="prototype"></bean>
+
+
+	<!-- set을 xml에서 하는방법 -->
+	<!-- 문자열인자 value="문자열" -->
+	<bean id="insa1" class="com.study.insa.Insa">
+		<property name="name" value="홍길동"></property>
+		<property name="age" value="2"></property>
+	</bean>
+	<!-- 자바의 setName()이 받음 -->
+	<!-- property를 줄여쓰려면 위에 xmlns:p="http://www.springframework.org/schma/p"를 
+		추가해야함!! -->
+	<!-- 이 p를 추가하기 쉬운방법 Namespaces가서 p체크 -->
+	<!-- 줄여쓰는방법으로는 bean에 p추가하기 age는 숫자지만 ""안에써야함!!!! -->
+	<bean id="insa2" class="com.study.insa.Insa" p:name="최미래"
+		p:age="3"></bean>
+		
+		
+	<!-- 객체를 setter 하는방법 -->
+	<!-- 객체인자 ref="객체참조변수" -->
+	<bean id="insa3" class="com.study.insa.Insa2" p:name="최미래"></bean>
+	<bean id="insa4" class="com.study.classSetter.ClassSetter" p:insa-ref="insa3"></bean>
+	<bean id="client3" class="com.study.client.Client2" p:id="100" p:name="김미래" p:hobby="축구"></bean>
+	<bean id="client4" class="com.study.classSetter.ClassSetter2" p:client2-ref="client3"></bean>
+	
+	
+	
+	
+</beans>
