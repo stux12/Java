@@ -29,7 +29,7 @@ public class LoginInfoDAO {
 	/* 로그인 확인 */
 	public int checkLogininfo(LoginInfoVO vo1) throws Exception{
 		
-		String sql = "select * from logintable55 where id=? and pw=?";
+		String sql = "SELECT * FROM LOGINTABLE55 WHERE ID=? AND PW=?";
 		pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, vo1.getId());
 		pstmt.setString(2, vo1.getPw());
@@ -46,7 +46,7 @@ public class LoginInfoDAO {
 	public LoginInfoVO getLogininfo(LoginInfoVO vo1) throws Exception{
 		
 		LoginInfoVO logininfo = null;
-		String sql = "select * from logintable55 where id = ?";
+		String sql = "SELECT * FROM LOGINTABLE55 WHERE ID = ?";
 		pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, vo1.getId());
 		rs = pstmt.executeQuery();
@@ -62,7 +62,7 @@ public class LoginInfoDAO {
 	/* 회원가입 */
 	public void insertLogininfo(LoginInfoVO vo1) throws Exception{
 		
-		String sql = "insert into logintable55 values(?,?,?)";
+		String sql = "INSERT INTO LOGINTABLE55 VALUES(?,?,?)";
 		
 		pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, vo1.getId());
@@ -75,7 +75,7 @@ public class LoginInfoDAO {
 	/* 회원삭제 */
 	public void deleteLogininfo(LoginInfoVO vo1) throws Exception{
 		
-		String sql = "delete logintable55 where id = ?";
+		String sql = "DELETE LOGINTABLE55 WHERE ID = ?";
 		
 		pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, vo1.getId());

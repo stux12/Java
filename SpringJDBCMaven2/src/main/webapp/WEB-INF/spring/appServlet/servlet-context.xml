@@ -22,8 +22,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.mgr.controller.sawonprocess" />
-	<context:component-scan base-package="com.mgr.controller.loginprocess" />
+	<context:component-scan base-package="com.mgr.controller" />
 	
 	
 	

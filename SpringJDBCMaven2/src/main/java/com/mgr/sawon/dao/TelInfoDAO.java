@@ -50,7 +50,7 @@ public class TelInfoDAO {
 
 	public ArrayList<TelInfoVO> getAllTelinfo(TelInfoVO vo1) throws SQLException {
 		ArrayList<TelInfoVO> tiarray = new ArrayList<TelInfoVO>();
-		String sql = "SELECT * FROM TelTable55 ORDER BY id";
+		String sql = "SELECT * FROM TELTABLE55 ORDER BY ID";
 
 		pstmt = con.prepareStatement(sql);
 		rs = pstmt.executeQuery();
@@ -68,7 +68,7 @@ public class TelInfoDAO {
 
 	public TelInfoVO getTelinfo(TelInfoVO vo1) throws SQLException {
 		TelInfoVO telinfo = null;
-		String sql = "select * from teltable55 where name = ?";
+		String sql = "SELECT * FROM TELTABLE55 WHERE NAME = ?";
 		pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, vo1.getName());
 		rs = pstmt.executeQuery();
@@ -96,7 +96,7 @@ public class TelInfoDAO {
 
 	public void updateTelinfo(TelInfoVO vo1) throws SQLException, ClassNotFoundException {
 
-		String sql = "update TelTable55 set id=?, tel=? where name=?";
+		String sql = "UPDATE TELTABLE55 SET ID=?, TEL=? WHERE NAME=?";
 		pstmt = con.prepareStatement(sql);
 		pstmt.setInt(1, vo1.getId());
 		pstmt.setString(2, vo1.getTel());
@@ -106,7 +106,7 @@ public class TelInfoDAO {
 	}
 
 	public void insertTelinfo(TelInfoVO vo1) throws SQLException {
-		String sql = "INSERT into TelTable55 values(?,?,?)";
+		String sql = "INSERT INTO TELTABLE55 VALUES(?,?,?)";
 
 		pstmt = con.prepareStatement(sql);
 		pstmt.setInt(1, vo1.getId());
@@ -117,7 +117,7 @@ public class TelInfoDAO {
 	}
 
 	public void deleteTelinfo(TelInfoVO vo1) throws SQLException {
-		String sql = "DELETE TelTable55 WHERE name = ?";
+		String sql = "DELETE TELTABLE55 WHERE NAME = ?";
 
 		pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, vo1.getName());

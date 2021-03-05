@@ -36,7 +36,7 @@ public class SawonController {
 		/* 이때 model1은 view로 전달시 컨트롤러가 생성한 data를 담을 객체 */
 		model1.addAttribute("mAllTelinfo", telInfoService.getAllTelinfo(vo1));
 		
-		return "sawonGetAllTelinfo";
+		return "sawon/sawonGetAllTelinfo";
 	}
 	
 	/* 클라이언트 한명 보기 */
@@ -45,7 +45,7 @@ public class SawonController {
 		
 		model1.addAttribute("mTelinfo",telInfoService.getTelinfo(vo1));
 		
-		return "sawonGetTelinfo";
+		return "sawon/sawonGetTelinfo";
 	}
 	
 	/* 클라이언트 삭제 */
@@ -78,6 +78,10 @@ public class SawonController {
 		return "redirect:getAllTelinfo.do";
 	}
 	
-
+	/* 클라이언트 회원가입으로 이동 */
+	@RequestMapping("/sawonInsert.do")
+	public String sawonInsert() throws Exception{
+		return "sawon/sawonInsertTelinfo";
+	}
 	
 }

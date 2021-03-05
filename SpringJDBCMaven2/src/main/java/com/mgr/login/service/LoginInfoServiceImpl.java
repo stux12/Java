@@ -13,12 +13,12 @@ public class LoginInfoServiceImpl implements LoginInfoService {
 	private LoginInfoDAO loginInfoDAO;
 	
 	@Override
-	public void insertTelinfo(LoginInfoVO vo1) throws Exception {
+	public void insertLogininfo(LoginInfoVO vo1) throws Exception {
 		loginInfoDAO.insertLogininfo(vo1);
 	}
 
 	@Override
-	public void deleteTelinfo(LoginInfoVO vo1) throws Exception {
+	public void deleteLogininfo(LoginInfoVO vo1) throws Exception {
 		loginInfoDAO.deleteLogininfo(vo1);
 	}
 

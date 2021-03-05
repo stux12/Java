@@ -29,9 +29,8 @@
 	
 	<table border="0">
 		<tr>
-			<td><a href="sawonInsertTelinfo.jsp">[입력]</a></td>
+			<td><a href="sawonInsert.do">[입력]</a></td>
 			<td><a href="getAllTelinfo.do">[모두보기]</a></td>
-			<td><a href="">[이전으로]</a></td>
 		</tr>
 	</table>
 </body>
