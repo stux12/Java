@@ -14,5 +14,5 @@ public interface SawonDAO {
 	int updateSawon(SawonVO sawonVO);
 
 	int deleteSawon(SawonVO sawonVO);
-
+	
 }

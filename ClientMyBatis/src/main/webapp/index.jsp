@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>회원 관리 시작</h1><hr>
+	이제 시작합니다!!
 	<script>
-		location.href="sawonAll.do"
+		location.href="main.do"
 	</script>
 </body>
 </html>
